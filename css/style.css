@@ -93,6 +93,7 @@ body{
     background-color: rgb(77,77,77);
     padding: 10px;
     position: relative;
+    color: #fff;
 }
 
 #font-option, #product-view, #get-quote-view{
@@ -107,28 +108,31 @@ body{
     cursor: pointer;
 }
 
-#get-quote-view .glyphicon, #font-option .glyphicon{
+#get-quote-view .glyphicon, #font-option .glyphicon-remove-circle{
     position: absolute;
     right: 10px;
     top: 10px;
     font-size: 20px;
     cursor: pointer;
 }
+
 /*font-options,Katya*/
 .control-holder {
     margin-top: 10px;
-			
-        }
-		
-	textarea { 
-	resize: both; 
-   } 
-		
-        .col-md-3{
-            height: 640px;
-            width: 210px;
-			
-			
-            
-        }
+
+}
+
+textarea { 
+    resize: both; 
+} 
+
+.col-md-3{
+    height: 640px;
+    width: 210px;
+}
+
+.btn-group{
+    height: 60px;
+    margin-top: 15px;
+}
 /*font-options,Katya*/

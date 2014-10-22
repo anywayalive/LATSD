@@ -1,5 +1,5 @@
 $(function () {
-	$('.selectpicker').selectpicker();//Font-options, selectpicker
+    //$('.selectpicker').selectpicker();
     $('.menu-icon-1').tooltip();
     $('.menu-icon-2').tooltip();
     $('.menu-icon-3').tooltip();
