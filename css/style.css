@@ -114,3 +114,21 @@ body{
     font-size: 20px;
     cursor: pointer;
 }
+/*font-options,Katya*/
+.control-holder {
+    margin-top: 10px;
+			
+        }
+		
+	textarea { 
+	resize: both; 
+   } 
+		
+        .col-md-3{
+            height: 640px;
+            width: 210px;
+			
+			
+            
+        }
+/*font-options,Katya*/
