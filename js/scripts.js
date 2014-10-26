@@ -35,6 +35,12 @@ $(function () {
     $(".glyphicon-remove-circle").click(function(){
         initialView();
     });
+	
+	/*-------- modal window --------------*/
+	$("#product-view .row div").click(function(){
+		$('.modal').modal('show');
+	});
+	
 });
 
 
