@@ -342,3 +342,24 @@ input[type="text"] {
 }
 
 /*font-options,Lena/
+
+.lower_panel{
+	position: absolute;
+	bottom: 23px;
+	font-size: 13px;
+	margin-left: 200px;
+	width: 350px;
+	height: 40px;
+	left: -6px;
+	
+	}
+.share{
+	position: absolute;
+	bottom: 23px;
+	font-size: 13px;
+	margin-left: 750px;
+	width: 40px;
+	height: 40px;
+	left: -6px;
+	margin-bottom: 50px;
+	}
