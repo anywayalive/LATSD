@@ -242,7 +242,7 @@ input[type="text"] {
 	font-size: 14px;
 }
 
-.btn {
+.get-quote-view .btn {
 	font-size: 16px;
 	background: #fff;
 	width: 25px;
@@ -255,7 +255,7 @@ input[type="text"] {
 	color: grey;
 }
 
-.btn:hover {
+.get-quote-view .btn:hover {
 	background: #eee;
 	cursor: pointer;
 }
@@ -341,4 +341,4 @@ input[type="text"] {
      *zoom: 1; 
 }
 
-/*font-options,Lena/
+/*font-options,Lena*/
