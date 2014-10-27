@@ -358,3 +358,24 @@ input[type="text"] {
 	margin-left: 0px !important;
 	margin-right: 0px  !important;
 }
+
+.modal-dialog {
+width: 800px;
+margin: 30px auto;
+}
+.modal-dialog  .btn-success {
+right: 10px;
+bottom: 10px;
+width: 180px;
+height: 40px;
+line-height: 1.8 !important;
+}
+
+.modal-body .btn {
+	
+	width: 25px;
+	height: 25px;
+	line-height: 21px;
+	float: left;
+	border: solid 1px #eee;
+	}
