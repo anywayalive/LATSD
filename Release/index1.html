@@ -852,12 +852,12 @@
             <!-- Font Option, Katya -->
             <div id="font-option">
                 <i class="glyphicon glyphicon-remove-circle"></i>
-                
+
                 <h3>Font options</h3>
                 <form>
                     <div class="form-horizontal">
                         <textarea class="form-control" rows="3" placeholder="Your text here" data-bind="value: selectedLetteringVO().text, valueUpdate: 'input', enable: editTextEnabled(), visible: !strictTemplate(), style: { textAlign: selectedLetteringVO().formatVO().textAlign }"></textarea>
-                        
+
                         <div class="btn-group">
                             <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-left"></span></button>
                             <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-center"></span></button>
@@ -868,9 +868,9 @@
                             <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-bold"></span></button>
                             <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-italic"></span></button>
                         </div>
-                        
 
-                        
+
+
                         <div>
                             <span class="btn btn-default">Colorpicker</span>
                             <span class="btn btn-default pull-right ">Stroke</span>
@@ -884,18 +884,31 @@
                             <input type="range" min="0" max="100" step="1" value="50">
                         </div>  
                         <div>
-                            <span>Text effect</span>
+                            <span data-bind="visible: showTextEffects()">Text effect</span>
                         </div>  
-                        <div>
-                            <select class="selectpicker">
-                                <option>None</option>
-                                <option>None1</option>
-                                <option>None2</option>
+                        <div data-bind="visible: showTextEffects()">
+                            <select data-bind="foreach: textEffects" class="selectpicker">
+                                <option data-bind="text: $data.label, click: $root.selectTextEffect">None</option>
                             </select>
-                        </div>      
+                        </div>    
+
+<!--                         <h6 data-bind="visible: showTextEffects()">Text Effects</h6>
+                        <div data-bind="visible: showTextEffects()" class="btn-group">
+                            <button class="btn btn-default" type="button" id="text-effects-btn" data-bind="text: selectedTextEffectVO().label()" data-toggle="dropdown"><span class="caret"></span></button>
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" data-bind="foreach: textEffects" style="height: 150px; overflow-y: scroll;">
+                                <li data-bind="css: { active: $root.selectedTextEffectVO().name() === $data.name }">
+                                    <a data-bind="text: $data.label, click: $root.selectTextEffect"></a>
+                                </li>
+                            </ul>
+                        </div> -->
+
+
                     </div>
                 </form>
-                
+
             </div>
             <!--//-->
 
@@ -950,11 +963,11 @@
                   <div class="title row">  
                      <h2 style="font-weight: normal; text-shadow: 0 0 1px #ddd; color: #aaa;">Get a Quote</h2>    
                  </div> 
-                 
+
                  <div class="title-small">Sizes and Quantities</div>
-                 
+
                  <div class="ctrl-wrap col-md-12"> 
-                  
+
                    <div class="letter-cont clearfix">
                     <h3>S</h3>
                     <h3 style="margin-left: 43px;">M</h3>
@@ -964,47 +977,47 @@
                     <h3>3X</h3>
                     <h3 style="margin-left: 35px;">4X</h3>
                 </div>
-                
+
                 <div class="container button clearfix">
                     <button class="btn">-</button>
                     <input class="span2" id="appendedInputButton" size="1" type="text">
                     <button class="btn" style="margin-right: 15px;">+</button>
-                    
+
                     <button class="btn">-</button>
                     <input class="span2" id="appendedInputButton" size="1" type="text">
                     <button class="btn" style="margin-right: 15px;">+</button> 
-                    
-                    
+
+
                     <button class="btn">-</button>
                     <input class="span2" id="appendedInputButton" size="1" type="text">
                     <button class="btn" style="margin-right: 15px;">+</button>
-                    
-                    
+
+
                     <button class="btn">-</button>
                     <input class="span2" id="appendedInputButton" size="1" type="text">
                     <button class="btn" style="margin-right: 15px;">+</button> 
-                    
-                    
+
+
                     <button class="btn">-</button>
                     <input class="span2" id="appendedInputButton" size="1" type="text">
                     <button class="btn" style="margin-right: 15px;">+</button>
-                    
+
                     <button class="btn">-</button>
                     <input class="span2" id="appendedInputButton" size="1" type="text">
                     <button class="btn" style="margin-right: 15px;">+</button>
-                    
+
                     <button class="btn">-</button>
                     <input class="span2" id="appendedInputButton" size="1" type="text">
                     <button class="btn" style="margin-right: 15px;">+</button>
-                    
+
                 </div>
 
                 <hr />
-                
+
                 <div class="container-duo">
                     <h5>Unisex Relaxed-fit T-shirt</h5>
                 </div>
-                
+
                 <div class="container-information">
                     <div class="cont clearfix">
                      <div class="box"></div>
@@ -1016,11 +1029,11 @@
                  </p>
 
                  <hr style="width: 300px;"/>
-                 
+
                  <div class="title-small" style="margin-bottom: 10px;">
                      One lettering, 2 images
                  </div>
-                 
+
                  <table>
                      <tr>
                       <td>Front</td>
