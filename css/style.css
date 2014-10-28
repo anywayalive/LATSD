@@ -39,7 +39,8 @@ body{
     padding: 10px;
 }
 
-.btn-success{
+.button-quote,
+.button-select-product {
     position: absolute;
     right: 10px;
     bottom: 10px;
@@ -94,6 +95,9 @@ body{
     padding: 10px;
     position: relative;
     color: #fff;
+    position: absolute;
+	z-index: 10;
+	left: 80px;
 }
 
 #font-option, #product-view, #get-quote-view{
