@@ -860,23 +860,28 @@
                     <div class="form-horizontal">
                         <textarea class="form-control" rows="3" placeholder="Your text here" data-bind="value: selectedLetteringVO().text, valueUpdate: 'input', enable: editTextEnabled(), visible: !strictTemplate(), style: { textAlign: selectedLetteringVO().formatVO().textAlign }"></textarea>
 
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-left"></span></button>
-                            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-center"></span></button>
-                            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-right"></span></button>
-                        </div>  
+                        <div id="text-align-group" class="btn-group" data-toggle="buttons" data-bind="radio: selectedLetteringVO().formatVO().textAlign">
+                            <label id="text-align-left-btn" class="btn btn-default" data-bind="css: { disabled: !textAlignEnabled() }"><span class="glyphicon glyphicon-align-left"></span>
+								<input type="radio" name="rb-text-align-group" value="left" data-bind="enable: textAlignEnabled()">
+                            </label>
+                            <label id="text-align-center-btn" class="btn btn-default" data-bind="css: { disabled: !textAlignEnabled() }"><span class="glyphicon glyphicon-align-center"></span>
+								<input type="radio" name="rb-text-align-group" value="center" data-bind="enable: textAlignEnabled()">
+                            </label>
+                            <label id="text-align-right-btn" class="btn btn-default" data-bind="css: { disabled: !textAlignEnabled() }"><span class="glyphicon glyphicon-align-right"></span>
+								<input type="radio" name="rb-text-align-group" value="right" data-bind="enable: textAlignEnabled()">
+                            </label>
+                        </div> 
 
-                        <div class="btn-group pull-right">
-                            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-bold"></span></button>
-                            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-italic"></span></button>
-                        </div>
-
-
-
-                        <div>
-                            <span class="btn btn-default">Colorpicker</span>
-                            <span class="btn btn-default pull-right ">Stroke</span>
-                        </div>  
+                      
+					<div class="btn-group pull-right">
+						<button class="btn btn-default" type="button" id="bold-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().bold, enable: selectedFont().boldAllowed"><span class="glyphicon glyphicon-bold"></span></button>
+                        <button class="btn btn-default" type="button" id="italic-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().italic, enable: selectedFont().italicAllowed"><span class="glyphicon glyphicon-italic"></span></button>
+					</div> 
+								
+					<div>
+						<span class="btn btn-default">Colorpicker</span>
+                        <span class="btn btn-default pull-right ">Stroke</span>
+					</div>
                         <div>   
                             <span>Letter spacing</span>
                             <input type="range" min="0" max="100" step="1" value="50">
