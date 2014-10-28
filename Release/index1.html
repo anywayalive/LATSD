@@ -174,8 +174,11 @@
                                     <div id="text-font-options">
                                         <button class="btn btn-default" type="button" id="bold-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().bold, enable: selectedFont().boldAllowed"><span>B</span></button>
                                         <button class="btn btn-default" type="button" id="italic-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().italic, enable: selectedFont().italicAllowed"><span>I</span></button>
-                                        <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
+                                        <!--<input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
                                         <input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
+										-->
+										
+										
                                     </div>
                                     <div class="divider"></div>
                                     <h6 data-bind="visible: showLetterSpacingSlider()">Letter Spacing</h6>
@@ -878,11 +881,12 @@
                         <button class="btn btn-default" type="button" id="italic-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().italic, enable: selectedFont().italicAllowed"><span class="glyphicon glyphicon-italic"></span></button>
 					</div> 
 								
-					<div>
-						<span class="btn btn-default">Colorpicker</span>
-                        <span class="btn btn-default pull-right ">Stroke</span>
-					</div>
-                        <div>   
+					<div id="text-font-options">
+                                       
+                        <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
+						<input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
+                    </div>
+                    <div>   
                             <span>Letter spacing</span>
                             <input type="range" min="0" max="100" step="1" value="50">
                         </div>
