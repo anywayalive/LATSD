@@ -38,8 +38,8 @@
 
     <!-- LiveArt Designer Fonts -->
     <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
-     <link rel="stylesheet" href="../css/style.css">
-      <script src="../js/scripts.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/scripts.js"></script>
 </head>
 
 <body>
@@ -363,8 +363,8 @@
             <!-- Product side swictch end -->
             <div id="preview-controls-container" class="liveart-panel-container">
                 <!--                <div class="navbar liveart-button-bar">
-                                    <div class="navbar-inner">-->
-                <ul class="nav nav-pills liveart-button-bar">
+                <div class="navbar-inner">-->
+                    <ul class="nav nav-pills liveart-button-bar">
                     <!--<li id="layers" class="dropup">
                       <a id="layers-btn" class="dropdown-toggle" data-toggle="dropdown">Layers</a>
                       <ul id="layers-list" class="dropdown-menu">
@@ -409,8 +409,8 @@
                           </li>
                       </ul>
                     </li>
-                    -->
-                    <li id="clear-design" data-bind="visible: !strictTemplate()"><a id="clear-design-btn" data-bind="    click: clearDesign"><span>Clear Design</span></a></li>
+                -->
+                <li id="clear-design" data-bind="visible: !strictTemplate()"><a id="clear-design-btn" data-bind="    click: clearDesign"><span>Clear Design</span></a></li>
                     <!--
                     <li id="undo"><a id="undo-btn"><span>Undo</span></a></li>
                     <li id="redo"><a id="redo-btn"><span>Redo</span></a></li>-->
@@ -515,31 +515,31 @@
                     </li>-->
                 </ul>
                 <!--</div>
-                </div>-->
+            </div>-->
                 <!-- <div id="preview-controls-content" class="liveart-panel">
-                    </div> -->
-            </div>
+            </div> -->
+        </div>
 
-            <div id="order-options-container" class="liveart-panel-container">
-                <div id="product-info-panel" class="liveart-panel">
-                    <h5 id="liveart-product-name" data-bind="text: selectedProductVO().name"></h5>
-                    <h6 data-bind="visible: $root.selectedProductVO().price">$<span data-bind="    text: selectedProductVO().price"></span> for each</h6>
-                    <h6 data-bind="text: selectedProductVO().description" class="description height-restriction"></h6>
-                    <h6 data-bind="visible: $root.showProductColorPicker">Color: <span data-bind="    text: selectedProductColorVO().name"></span></h6>
-                    <table class="gray order-colors" data-bind="foreach: $root.designInfo().colors">
-                        <tr>
-                            <td data-bind="text: $data.location"></td>
-                            <td data-bind="text: $root.colorsCount($data.count)"></td>
-                        </tr>
-                    </table>
-                    <div class="divider"></div>
-                    <div class="gray"><span data-bind="text: objectsCount()"></span></div>
-                </div>
-                <div id="product-sizes-panel" class="liveart-panel">
-                    <div>
-                        <ul id="product-sizes-list" class="list-unstyled" data-bind="foreach: quantities">
-                            <li>
-                                <span class="quantity-label" data-bind="visible: $root.selectedProductVO().sizes().length < 1">Quantity:</span>
+        <div id="order-options-container" class="liveart-panel-container">
+            <div id="product-info-panel" class="liveart-panel">
+                <h5 id="liveart-product-name" data-bind="text: selectedProductVO().name"></h5>
+                <h6 data-bind="visible: $root.selectedProductVO().price">$<span data-bind="    text: selectedProductVO().price"></span> for each</h6>
+                <h6 data-bind="text: selectedProductVO().description" class="description height-restriction"></h6>
+                <h6 data-bind="visible: $root.showProductColorPicker">Color: <span data-bind="    text: selectedProductColorVO().name"></span></h6>
+                <table class="gray order-colors" data-bind="foreach: $root.designInfo().colors">
+                    <tr>
+                        <td data-bind="text: $data.location"></td>
+                        <td data-bind="text: $root.colorsCount($data.count)"></td>
+                    </tr>
+                </table>
+                <div class="divider"></div>
+                <div class="gray"><span data-bind="text: objectsCount()"></span></div>
+            </div>
+            <div id="product-sizes-panel" class="liveart-panel">
+                <div>
+                    <ul id="product-sizes-list" class="list-unstyled" data-bind="foreach: quantities">
+                        <li>
+                            <span class="quantity-label" data-bind="visible: $root.selectedProductVO().sizes().length < 1">Quantity:</span>
                                 <!--<div class="btn-group" data-bind="visible: $root.selectedProductVO().sizes().length > 1">
                                     <button class="btn btn-default dropdown-toggle size-btn" type="button" data-toggle="dropdown">
                                         <span class="size-btn-label" data-bind="text: $data.size"></span>
@@ -552,8 +552,8 @@
                                     </ul>
                                 </div>-->
                                 <select class="btn btn-default" data-bind=" visible: $root.selectedProductVO().sizes().length > 1,
-                                                                options: $root.selectedProductVO().sizes,
-                                                                value: size">
+                                    options: $root.selectedProductVO().sizes,
+                                    value: size">
                                 </select>
 
                                 <span class="btn-group-quantity">
@@ -574,10 +574,10 @@
                         </div>-->
                         <table class="order-price height-restriction" data-bind="if:$root.designInfo().prices!='not available'">
                             <tbody data-bind="foreach: $root.designInfo().prices">
-                            <tr>
-                                <td class="gray" data-bind="text: $data.label"></td>
-                                <td class="order-price" data-bind="text: $data.price, css: { bold: $data.isTotal }"></td>
-                            </tr>
+                                <tr>
+                                    <td class="gray" data-bind="text: $data.label"></td>
+                                    <td class="order-price" data-bind="text: $data.price, css: { bold: $data.isTotal }"></td>
+                                </tr>
                             </tbody>
                         </table>
                         <!--<a class="btn btn-link btn-block" onclick="onGetQuote()">Get Quote</a>-->
@@ -824,78 +824,108 @@
         <div class="container-fixed">
             <div id="menu">
                 <button type="button" class="btn btn-default menu-icon-1" 
-                        data-toggle="tooltip" data-placement="right" title="Tooltip on right">1</button>
+                data-toggle="tooltip" data-placement="right" title="Tooltip on right">1</button>
                 <button type="button" class="btn btn-default menu-icon-2" 
-                        data-toggle="tooltip" data-placement="right" title="font-option">2</button>
+                data-toggle="tooltip" data-placement="right" title="font-option">2</button>
                 <button type="button" class="btn btn-default menu-icon-3" disabled
-                        data-toggle="tooltip" data-placement="right" title="Tooltip on right">3</button>
+                data-toggle="tooltip" data-placement="right" title="Tooltip on right">3</button>
                 <button type="button" class="btn btn-default menu-icon-4" disabled
-                        data-toggle="tooltip" data-placement="right" title="Tooltip on right">4</button>
+                data-toggle="tooltip" data-placement="right" title="Tooltip on right">4</button>
 
                 <!-- Zoom, Tanya -->
                 <div class="zoom">
+                    <div class="zoom-buttons">
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-minus"></span></button>
+                                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+                                
 
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!--//-->
+
             </div>
+            <!--//-->
 
             <!-- Font Option, Katya -->
             <div id="font-option">
                 <i class="glyphicon glyphicon-remove-circle"></i>
                 
-                        <h3>Font options</h3>
-                        <form>
-                            <div class="form-horizontal">
-                                <textarea class="form-control" rows="3" placeholder="Your text here" data-bind="value: selectedLetteringVO().text, valueUpdate: 'input', enable: editTextEnabled(), visible: !strictTemplate(), style: { textAlign: selectedLetteringVO().formatVO().textAlign }"></textarea>
-                                
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-left"></span></button>
-                                        <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-center"></span></button>
-                                        <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-right"></span></button>
-                                    </div>	
+                <h3>Font options</h3>
+                <form>
+                    <div class="form-horizontal">
+                        <textarea class="form-control" rows="3" placeholder="Your text here" data-bind="value: selectedLetteringVO().text, valueUpdate: 'input', enable: editTextEnabled(), visible: !strictTemplate(), style: { textAlign: selectedLetteringVO().formatVO().textAlign }"></textarea>
+                        
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-left"></span></button>
+                            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-center"></span></button>
+                            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-align-right"></span></button>
+                        </div>  
 
-                                    <div class="btn-group pull-right">
-                                        <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-bold"></span></button>
-                                        <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-italic"></span></button>
-                                    </div>
-                                
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-bold"></span></button>
+                            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-italic"></span></button>
+                        </div>
+                        
 
-                                
-                                <div>
-                                    <span class="btn btn-default">Colorpicker</span>
-                                    <span class="btn btn-default pull-right ">Stroke</span>
-                                </div>	
-                                <div>	
-                                    <span>Letter spacing</span>
-                                    <input type="range" min="0" max="100" step="1" value="50">
-                                </div>
-                                <div>
-                                    <span>Line spacing</span>
-                                    <input type="range" min="0" max="100" step="1" value="50">
-                                </div>	
-                                <div>
-                                    <span>Text effect</span>
-                                </div>	
-                                <div>
-                                    <select class="selectpicker">
-                                        <option>None</option>
-                                        <option>None1</option>
-                                        <option>None2</option>
-                                    </select>
-                                </div>		
+                        
+                        <div>
+                            <span class="btn btn-default">Colorpicker</span>
+                            <span class="btn btn-default pull-right ">Stroke</span>
+                        </div>  
+                        <div>   
+                            <span>Letter spacing</span>
+                            <input type="range" min="0" max="100" step="1" value="50">
+                        </div>
+                        <div>
+                            <span>Line spacing</span>
+                            <input type="range" min="0" max="100" step="1" value="50">
+                        </div>  
+                        <div>
+                            <span>Text effect</span>
+                        </div>  
+                        <div>
+                            <select class="selectpicker">
+                                <option>None</option>
+                                <option>None1</option>
+                                <option>None2</option>
+                            </select>
+                        </div>      
                     </div>
-                    </form>
-               
-        </div>
-        <!--//-->
+                </form>
+                
+            </div>
+            <!--//-->
+
+            <div id="content">
+
+                <!-- Initial View, Tanya -->
+                <div id="initial-view">
+                    <h3>Initial view</h3>
+                    <div class="lower_panel">
+
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                             <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-file"></span></button>
+                             <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-list-alt"></span></button>
+                             <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-tags"></span></button>
+                             <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-tags"></span></button>
+                             <button type="button" class="btn btn-default">Fill<span class="glyphicon glyphicon-indent-righ"></span></button>
+                             <button type="button" class="btn btn-default">Stroke<span class="glyphicon glyphicon-indent-righ"></span></button>
+
+                         </div>
+                     </div>
 
 
+                 </div>
+                 <div class="share"> 
+                    <div class="btn-toolbar">
+                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-share-alt"></span></button>
 
-        <div id="content">
-
-            <!-- Initial View, Tanya -->
-            <div id="initial-view">
-                initial view
+                    </div>
+                </div>
                 <a class="btn btn-success btn-large" id="quote">Proceed to Quote</a>
             </div>
             <!--//-->
@@ -915,118 +945,123 @@
             <div id="get-quote-view">
                 <i class="glyphicon glyphicon-remove-circle"></i>
                 <div class="container wrap-order">
-		<button class="close">&times;</button>
+                  <button class="close">&times;</button>
 
-		 <div class="title row">  
-		   <h2 style="font-weight: normal; text-shadow: 0 0 1px #ddd; color: #aaa;">Get a Quote</h2>	
-		</div> 
-			
-		<div class="title-small">Sizes and Quantities</div>
-			   
-		<div class="ctrl-wrap col-md-12"> 
-		
-			<div class="letter-cont clearfix">
-				<h3>S</h3>
-				<h3 style="margin-left: 43px;">M</h3>
-				<h3 style="margin-left: 43px;">L</h3>
-				<h3 style="margin-left: 44px;">XL</h3>
-				<h3>2X</h3>
-				<h3>3X</h3>
-				<h3 style="margin-left: 35px;">4X</h3>
-			</div>
-		
-			<div class="container button clearfix">
-				<button class="btn">-</button>
-				<input class="span2" id="appendedInputButton" size="1" type="text">
-				<button class="btn" style="margin-right: 15px;">+</button>
-				
-				<button class="btn">-</button>
-				<input class="span2" id="appendedInputButton" size="1" type="text">
-				<button class="btn" style="margin-right: 15px;">+</button> 
-				
-				
-				<button class="btn">-</button>
-				<input class="span2" id="appendedInputButton" size="1" type="text">
-				<button class="btn" style="margin-right: 15px;">+</button>
-			
-				
-				<button class="btn">-</button>
-				<input class="span2" id="appendedInputButton" size="1" type="text">
-				<button class="btn" style="margin-right: 15px;">+</button> 
-				
-			
-				<button class="btn">-</button>
-				<input class="span2" id="appendedInputButton" size="1" type="text">
-				<button class="btn" style="margin-right: 15px;">+</button>
-				
-				<button class="btn">-</button>
-				<input class="span2" id="appendedInputButton" size="1" type="text">
-				<button class="btn" style="margin-right: 15px;">+</button>
-				
-				<button class="btn">-</button>
-				<input class="span2" id="appendedInputButton" size="1" type="text">
-				<button class="btn" style="margin-right: 15px;">+</button>
-		
-			</div>
+                  <div class="title row">  
+                     <h2 style="font-weight: normal; text-shadow: 0 0 1px #ddd; color: #aaa;">Get a Quote</h2>    
+                 </div> 
+                 
+                 <div class="title-small">Sizes and Quantities</div>
+                 
+                 <div class="ctrl-wrap col-md-12"> 
+                  
+                   <div class="letter-cont clearfix">
+                    <h3>S</h3>
+                    <h3 style="margin-left: 43px;">M</h3>
+                    <h3 style="margin-left: 43px;">L</h3>
+                    <h3 style="margin-left: 44px;">XL</h3>
+                    <h3>2X</h3>
+                    <h3>3X</h3>
+                    <h3 style="margin-left: 35px;">4X</h3>
+                </div>
+                
+                <div class="container button clearfix">
+                    <button class="btn">-</button>
+                    <input class="span2" id="appendedInputButton" size="1" type="text">
+                    <button class="btn" style="margin-right: 15px;">+</button>
+                    
+                    <button class="btn">-</button>
+                    <input class="span2" id="appendedInputButton" size="1" type="text">
+                    <button class="btn" style="margin-right: 15px;">+</button> 
+                    
+                    
+                    <button class="btn">-</button>
+                    <input class="span2" id="appendedInputButton" size="1" type="text">
+                    <button class="btn" style="margin-right: 15px;">+</button>
+                    
+                    
+                    <button class="btn">-</button>
+                    <input class="span2" id="appendedInputButton" size="1" type="text">
+                    <button class="btn" style="margin-right: 15px;">+</button> 
+                    
+                    
+                    <button class="btn">-</button>
+                    <input class="span2" id="appendedInputButton" size="1" type="text">
+                    <button class="btn" style="margin-right: 15px;">+</button>
+                    
+                    <button class="btn">-</button>
+                    <input class="span2" id="appendedInputButton" size="1" type="text">
+                    <button class="btn" style="margin-right: 15px;">+</button>
+                    
+                    <button class="btn">-</button>
+                    <input class="span2" id="appendedInputButton" size="1" type="text">
+                    <button class="btn" style="margin-right: 15px;">+</button>
+                    
+                </div>
 
-			<hr />
-			
-			<div class="container-duo">
-				<h5>Unisex Relaxed-fit T-shirt</h5>
-			</div>
-			
-			<div class="container-information">
-				<div class="cont clearfix">
-					<div class="box"></div>
-					<h4>Burgundy</h4>
-				</div>
-				<p>
-					Slim fitting jersey t-shirt for men<br />
-					94% cotton, 6% elastane
-				</p>
+                <hr />
+                
+                <div class="container-duo">
+                    <h5>Unisex Relaxed-fit T-shirt</h5>
+                </div>
+                
+                <div class="container-information">
+                    <div class="cont clearfix">
+                     <div class="box"></div>
+                     <h4>Burgundy</h4>
+                 </div>
+                 <p>
+                     Slim fitting jersey t-shirt for men<br />
+                     94% cotton, 6% elastane
+                 </p>
 
-				<hr style="width: 300px;"/>
-				
-				<div class="title-small" style="margin-bottom: 10px;">
-					One lettering, 2 images
-				</div>
-				 
-				<table>
-					<tr>
-						<td>Front</td>
-						<td>3 colors</td>
-					</tr>
-					<tr>
-						<td>Right Sleeve</td>
-						<td>2 colors</td>
-					</tr>
-				</table>
-				
-				<table class="right-table">
-					<tr>
-						<td>Price per Item</td>
-						<td>$7.69</td>
-					</tr>
-					<tr>
-						<td style="font-size: 22px;">Subtotal</td>
-						<td style="font-size: 22px;">$23.07</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-			   
-		<button class="btn-bottom">Continue Designing</button>
-		<button class="btn-bottom" style="background: #2EBB57; left: 635px;">Place Order</button>
-	   
-            </div>
-            <!--//-->
-
-
-
-        </div>
+                 <hr style="width: 300px;"/>
+                 
+                 <div class="title-small" style="margin-bottom: 10px;">
+                     One lettering, 2 images
+                 </div>
+                 
+                 <table>
+                     <tr>
+                      <td>Front</td>
+                      <td>3 colors</td>
+                  </tr>
+                  <tr>
+                      <td>Right Sleeve</td>
+                      <td>2 colors</td>
+                  </tr>
+              </table>
+              
+              <table class="right-table">
+                 <tr>
+                  <td>Price per Item</td>
+                  <td>$7.69</td>
+              </tr>
+              <tr>
+                  <td style="font-size: 22px;">Subtotal</td>
+                  <td style="font-size: 22px;">$23.07</td>
+              </tr>
+          </table>
+      </div>
+  </div>
+  
+  <button class="btn-bottom">Continue Designing</button>
+  <button class="btn-bottom" style="background: #2EBB57; left: 635px;">Place Order</button>
+  
+</div>
+<!--//-->
 
 
-    </div>
+
+</div>
+
+
+</div>
+</div>
+
+
+
+
 
 
 </body>
