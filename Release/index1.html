@@ -146,7 +146,7 @@
                                     </div>-->
                                     <textarea id="add-text-input" data-bind="value: selectedLetteringVO().text, valueUpdate: 'input', enable: editTextEnabled(), visible: !strictTemplate(), style: { textAlign: selectedLetteringVO().formatVO().textAlign }" type="text" placeholder="Your text here"></textarea>
                                     <textarea id="edit-text-input" data-bind="value: selectedLetteringVO().text, valueUpdate: 'input', enable: editTextEnabled(), visible: strictTemplate(), style: { textAlign: selectedLetteringVO().formatVO().textAlign }" type="text" placeholder="Your text here"></textarea>
-                                    <div id="text-align-group" class="btn-group" data-toggle="buttons" data-bind="radio: selectedLetteringVO().formatVO().textAlign">
+                                  <!--KATYA <div id="text-align-group" class="btn-group" data-toggle="buttons" data-bind="radio: selectedLetteringVO().formatVO().textAlign">
                                         <label id="text-align-left-btn" class="btn btn-default" data-bind="css: { disabled: !textAlignEnabled() }">
                                             <input type="radio" name="rb-text-align-group" value="left" data-bind="enable: textAlignEnabled()">
                                         </label>
@@ -156,7 +156,7 @@
                                         <label id="text-align-right-btn" class="btn btn-default" data-bind="css: { disabled: !textAlignEnabled() }">
                                             <input type="radio" name="rb-text-align-group" value="right" data-bind="enable: textAlignEnabled()">
                                         </label>
-                                    </div>
+                                    </div>  -->
                                     <button class="btn btn-default" id="add-text-btn" type="button" data-bind="click: addText, enable: selectedLetteringVO().text().length > 0, visible: !strictTemplate()">Add</button>
                                     <div class="divider"></div>
                                     <h6>Font options</h6>
@@ -171,15 +171,16 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div id="text-font-options">
-                                        <button class="btn btn-default" type="button" id="bold-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().bold, enable: selectedFont().boldAllowed"><span>B</span></button>
+                                   <!-- <div id="text-font-options">
+                                         KATYA<button class="btn btn-default" type="button" id="bold-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().bold, enable: selectedFont().boldAllowed"><span>B</span></button>
                                         <button class="btn btn-default" type="button" id="italic-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().italic, enable: selectedFont().italicAllowed"><span>I</span></button>
-                                        <!--<input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
-                                        <input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
-										-->
+                                        <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
+                                        <input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" /> 
 										
 										
-                                    </div>
+										
+										
+                                    </div> -->
                                     <div class="divider"></div>
                                     <h6 data-bind="visible: showLetterSpacingSlider()">Letter Spacing</h6>
                                     <div id="text-letter-spacing-slider" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().letterSpacing, rangeStart: 0, rangeEnd: 20, step: 1, visible: showLetterSpacingSlider()"></div>
@@ -824,21 +825,21 @@
     <!--<div id="divLog"></div>
         <button onclick="magic()">Magic!</button>
         <button onclick="magic2()">Magic2</button>-->
-        <div class="container-fixed">
+      <div class="container-fixed">
             <div id="menu">
                 <button type="button" class="btn btn-default menu-icon-1" 
-                data-toggle="tooltip" data-placement="right" title="Tooltip on right">1</button>
+                        data-toggle="tooltip" data-placement="right" title="Tooltip on right">1</button>
                 <button type="button" class="btn btn-default menu-icon-2" 
-                data-toggle="tooltip" data-placement="right" title="font-option">2</button>
+                        data-toggle="tooltip" data-placement="right" title="font-option">2</button>
                 <button type="button" class="btn btn-default menu-icon-3" 
-                data-toggle="tooltip" data-placement="right" title="Initial View">3</button>
+                        data-toggle="tooltip" data-placement="right" title="Initial View">3</button>
                 <button type="button" class="btn btn-default menu-icon-4" disabled
-                data-toggle="tooltip" data-placement="right" title="Tooltip on right">4</button>
+                        data-toggle="tooltip" data-placement="right" title="Tooltip on right">4</button>
 
                 <!-- Zoom, Tanya -->
                 <div class="zoom">
-                <h6>Zoom: <span data-bind="text: (zoom() + '%')"></span></h6>
-                <div id="zoom-slider" class="noUiSlider" data-bind="slider: zoom, rangeStart: minZoom(), rangeEnd: maxZoom()"></div>
+                    <h6>Zoom: <span data-bind="text: (zoom() + '%')"></span></h6>
+                    <div id="zoom-slider" class="noUiSlider" data-bind="slider: zoom, rangeStart: minZoom(), rangeEnd: maxZoom()"></div>
                     <!--<div class="zoom-buttons">
                         <div class="btn-toolbar">
                             <div class="btn-group">
@@ -861,32 +862,43 @@
                 <h3>Font options</h3>
                 <form>
                     <div class="form-horizontal">
-                        <textarea class="form-control" rows="3" placeholder="Your text here" data-bind="value: selectedLetteringVO().text, valueUpdate: 'input', enable: editTextEnabled(), visible: !strictTemplate(), style: { textAlign: selectedLetteringVO().formatVO().textAlign }"></textarea>
-
+                        <div class="font-option-textarea">
+                            <textarea class="form-control" rows="3" placeholder="Your text here" data-bind="value: selectedLetteringVO().text, valueUpdate: 'input', enable: editTextEnabled(), visible: !strictTemplate(), style: { textAlign: selectedLetteringVO().formatVO().textAlign }"></textarea>
+                            <button class="btn btn-default" id="add-text-btn" type="button" data-bind="click: addText, enable: selectedLetteringVO().text().length > 0, visible: !strictTemplate()">Add</button>
+                        </div>
+                        
                         <div id="text-align-group" class="btn-group" data-toggle="buttons" data-bind="radio: selectedLetteringVO().formatVO().textAlign">
                             <label id="text-align-left-btn" class="btn btn-default" data-bind="css: { disabled: !textAlignEnabled() }"><span class="glyphicon glyphicon-align-left"></span>
-								<input type="radio" name="rb-text-align-group" value="left" data-bind="enable: textAlignEnabled()">
+                                <input type="radio" name="rb-text-align-group" value="left" data-bind="enable: textAlignEnabled()">
                             </label>
                             <label id="text-align-center-btn" class="btn btn-default" data-bind="css: { disabled: !textAlignEnabled() }"><span class="glyphicon glyphicon-align-center"></span>
-								<input type="radio" name="rb-text-align-group" value="center" data-bind="enable: textAlignEnabled()">
+                                <input type="radio" name="rb-text-align-group" value="center" data-bind="enable: textAlignEnabled()">
                             </label>
                             <label id="text-align-right-btn" class="btn btn-default" data-bind="css: { disabled: !textAlignEnabled() }"><span class="glyphicon glyphicon-align-right"></span>
-								<input type="radio" name="rb-text-align-group" value="right" data-bind="enable: textAlignEnabled()">
+                                <input type="radio" name="rb-text-align-group" value="right" data-bind="enable: textAlignEnabled()">
                             </label>
                         </div> 
+                        
 
-                      
-					<div class="btn-group pull-right">
-						<button class="btn btn-default" type="button" id="bold-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().bold, enable: selectedFont().boldAllowed"><span class="glyphicon glyphicon-bold"></span></button>
-                        <button class="btn btn-default" type="button" id="italic-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().italic, enable: selectedFont().italicAllowed"><span class="glyphicon glyphicon-italic"></span></button>
-					</div> 
-								
-					<div id="text-font-options">
-                                       
-                        <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
-						<input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
-                    </div>
-                    <div>   
+                        <div class="btn-group pull-right">
+                            <button class="btn btn-default" type="button" id="bold-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().bold, enable: selectedFont().boldAllowed"><span class="glyphicon glyphicon-bold"></span></button>
+                            <button class="btn btn-default" type="button" id="italic-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().italic, enable: selectedFont().italicAllowed"><span class="glyphicon glyphicon-italic"></span></button>
+                        </div> 
+
+                        
+                        <div id="text-font-options">
+                             <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
+                             <input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
+                       </div>
+                        
+                        <!--
+                        <div id="text-font-options">
+
+                            <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
+                            <input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
+                        </div>
+                        -->
+                        <div>   
                             <span>Letter spacing</span>
                             <input type="range" min="0" max="100" step="1" value="50">
                         </div>
@@ -902,8 +914,9 @@
                                 <option data-bind="text: $data.label, click: $root.selectTextEffect">None</option>
                             </select>
                         </div>    
-
-<!--                         <h6 data-bind="visible: showTextEffects()">Text Effects</h6>
+                        
+                        <!--
+                        <h6 data-bind="visible: showTextEffects()">Text Effects</h6>
                         <div data-bind="visible: showTextEffects()" class="btn-group">
                             <button class="btn btn-default" type="button" id="text-effects-btn" data-bind="text: selectedTextEffectVO().label()" data-toggle="dropdown"><span class="caret"></span></button>
                             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
@@ -914,7 +927,8 @@
                                     <a data-bind="text: $data.label, click: $root.selectTextEffect"></a>
                                 </li>
                             </ul>
-                        </div> -->
+                        </div> 
+                        -->
 
 
                     </div>
@@ -932,422 +946,424 @@
 
                         <div class="btn-toolbar">
                             <div class="btn-group">
-                               <button type="button" class="btn btn-default" data-bind="click: copy"><span class="glyphicon glyphicon-file"></span></button>
-                               <button type="button" class="btn btn-default" data-bind="click: paste"><span class="glyphicon glyphicon-list-alt"></span></button>
-                               <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-tags"></span></button>
-                               <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-tags"></span></button>
-                               <button type="button" class="btn btn-default">Fill<span class="glyphicon glyphicon-indent-righ"></span></button>
-                               <button type="button" class="btn btn-default">Stroke<span class="glyphicon glyphicon-indent-righ"></span></button>
+                                <button type="button" class="btn btn-default" data-bind="click: copy"><span class="glyphicon glyphicon-file"></span></button>
+                                <button type="button" class="btn btn-default" data-bind="click: paste"><span class="glyphicon glyphicon-list-alt"></span></button>
+                                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-tags"></span></button>
+                                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-tags"></span></button>
+                                <button type="button" class="btn btn-default">Fill<span class="glyphicon glyphicon-indent-righ"></span></button>
+                                <button type="button" class="btn btn-default">Stroke<span class="glyphicon glyphicon-indent-righ"></span></button>
 
-                           </div>
-                       </div>
-
-
-                   </div>
-                   <div class="share"> 
-                    <div class="btn-toolbar">
-                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-share-alt"></span></button>
-
-                    </div>
-                </div>
-                <a class="btn btn-success btn-large button-quote" id="quote">Proceed to Quote</a>
-            </div>
-            <!--//-->
-
-            <!-- Product View, Maryna -->
-            <div id="product-view">
-                <div class="glyphicon-top">
-                    <i class="glyphicon glyphicon-search"></i>
-                    <i class="glyphicon glyphicon-remove-circle"></i>
-                </div>
-                <h1>Select Product </h1>
-                <small>All products -> T-Shirts -> Short Sleeve T-Shirts</small>
-
-                <div class="row grid-product-categories" data-bind="foreach: productCategories, visible: productsSearchQuery().length == 0">
-                    
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" data-bind="css: { active: $data.id == $root.selectedProductCategoryVO().id() }, style: { backgroundImage: 'url(' + thumbUrl + ')' }, click: $root.selectProductCategory">
-                            <!--<img class="img-responsive" src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">-->
-                            <div class="caption">
-                                <h3 data-bind="text: name">Product name</h3>
-                                <p>price</p> 
                             </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="row grid-products" data-bind="foreach: currentProducts, visible: productsSearchQuery().length > 0">
-                    <a class="liveart-back-btn" data-bind="click: hideProductsGallery, visible: productsSearchQuery().length == 0"></a>
-                    
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" data-bind="click: $root.selectProduct, css: { active: $data.id == $root.selectedProductVO().id() }">
-                            <img class="img-responsive" src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">
-                            <div class="caption">
-                                <h3 data-bind="text: name">Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="row" style="display:none;">
+                        </div>
 
 
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
                     </div>
-                    
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>                </div>
-                
-                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-xs-6 thumb">
-                                        <a class="thumbnail" href="#">
-                                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="col-lg-2 col-md-2 col-xs-3 thumb">
-                                            <a class="thumbnail" href="#">
-                                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                            </a>
-                                        </div>
-                                        
-                                        <div class="col-lg-6 col-md-2 col-xs-3 thumb">
-                                            <h3>Product name</h3>
-                                            <p>description</p>
-                                            <p>sizes</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="col-lg-2 col-md-2 col-xs-3 thumb">
-                                            <a class="thumbnail" href="#">
-                                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                            </a>
-                                        </div>
-                                        
-                                        
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="col-lg-2 col-md-2 col-xs-3 thumb">
-                                            <a class="thumbnail" href="#">
-                                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                            </a>
-                                        </div class="col-lg-6 col-md-2 col-xs-3 thumb">
-                                        <div>  
-                                            <button type="button" class="btn btn-default"></button>
-                                            <button type="button" class="btn btn-primary"></button>
-                                            <button type="button" class="btn btn-info"></button>
-                                            <button type="button" class="btn btn-warning"></button>
-                                            <button type="button" class="btn btn-danger"></button>
-                                            <button type="button" class="btn btn-link"></button>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                    
-                                    
-                                </div>
-                                
-                            </div>
-                            <button type="button" class="btn btn-success button-select-product">Select Product</button>
-                            
+                    <div class="share"> 
+                        <div class="btn-toolbar">
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-share-alt"></span></button>
+
                         </div>
                     </div>
+                    <a class="btn btn-success btn-large button-quote" id="quote">Proceed to Quote</a>
+                </div>
+                <!--//-->
 
-
+                <!-- Product View, Maryna -->
+                <div id="product-view">
+                    <div class="glyphicon-top">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <i class="glyphicon glyphicon-remove-circle"></i>
+                    </div>
+                    <h1>Select Product </h1>
+                    <small>All products -> T-Shirts -> Short Sleeve T-Shirts</small>
                     
-                </div> 
+                    <div class="row grid-product-categories" data-bind="foreach: productCategories, visible: productsSearchQuery().length == 0">
+
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" data-bind="css: { active: $data.id == $root.selectedProductCategoryVO().id() }, style: { backgroundImage: 'url(' + thumbUrl + ')' }, click: $root.selectProductCategory">
+                                <!--<img class="img-responsive" src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">-->
+                                <div class="caption">
+                                    <h3 data-bind="text: name">Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- this part have a bug. 
+                    <div class="row grid-products" data-bind="foreach: currentProducts, visible: productsSearchQuery().length > 0">
+                        <a class="liveart-back-btn" data-bind="click: hideProductsGallery, visible: productsSearchQuery().length === 0"></a>
+
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" data-bind="click: $root.selectProduct, css: { active: $data.id === $root.selectedProductVO().id() }">
+                                <img class="img-responsive" src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">
+                                <div class="caption">
+                                    <h3 data-bind="text: name">Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    -->
+                    <div class="row" style="display:none;">
+
+
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                            <a class="thumbnail" href="#">
+                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                <div class="caption">
+                                    <h3>Product name</h3>
+                                    <p>price</p> 
+                                </div>
+                            </a>
+                        </div>                </div>
+
+                    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                            <a class="thumbnail" href="#">
+                                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="col-lg-2 col-md-2 col-xs-3 thumb">
+                                                <a class="thumbnail" href="#">
+                                                    <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                                </a>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-2 col-xs-3 thumb">
+                                                <h3>Product name</h3>
+                                                <p>description</p>
+                                                <p>sizes</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="col-lg-2 col-md-2 col-xs-3 thumb">
+                                                <a class="thumbnail" href="#">
+                                                    <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                                </a>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="col-lg-2 col-md-2 col-xs-3 thumb">
+                                                <a class="thumbnail" href="#">
+                                                    <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                                                </a>
+                                            </div>
+                                            <div>  
+                                                <button type="button" class="btn btn-default"></button>
+                                                <button type="button" class="btn btn-primary"></button>
+                                                <button type="button" class="btn btn-info"></button>
+                                                <button type="button" class="btn btn-warning"></button>
+                                                <button type="button" class="btn btn-danger"></button>
+                                                <button type="button" class="btn btn-link"></button>
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+                                <button type="button" class="btn btn-success button-select-product">Select Product</button>
+
+                            </div>
+                        </div>
+
+
+
+                    </div> 
+                </div>
+                <!--//-->
+
+                <!-- Get Guote View, Lena -->
+                <div id="get-quote-view">
+                    <i class="glyphicon glyphicon-remove-circle"></i>
+                    <div class="container wrap-order">
+                        <button class="close">&times;</button>
+
+                        <div class="title row">  
+                            <h2 style="font-weight: normal; text-shadow: 0 0 1px #ddd; color: #aaa;">Get a Quote</h2>    
+                        </div> 
+
+                        <div class="title-small">Sizes and Quantities</div>
+
+                        <div class="ctrl-wrap col-md-12"> 
+
+                            <div class="letter-cont clearfix">
+                                <h3>S</h3>
+                                <h3 style="margin-left: 43px;">M</h3>
+                                <h3 style="margin-left: 43px;">L</h3>
+                                <h3 style="margin-left: 44px;">XL</h3>
+                                <h3>2X</h3>
+                                <h3>3X</h3>
+                                <h3 style="margin-left: 35px;">4X</h3>
+                            </div>
+
+                            <div class="container button clearfix">
+                                <button class="btn">-</button>
+                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <button class="btn" style="margin-right: 15px;">+</button>
+
+                                <button class="btn">-</button>
+                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <button class="btn" style="margin-right: 15px;">+</button> 
+
+
+                                <button class="btn">-</button>
+                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <button class="btn" style="margin-right: 15px;">+</button>
+
+
+                                <button class="btn">-</button>
+                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <button class="btn" style="margin-right: 15px;">+</button> 
+
+
+                                <button class="btn">-</button>
+                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <button class="btn" style="margin-right: 15px;">+</button>
+
+                                <button class="btn">-</button>
+                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <button class="btn" style="margin-right: 15px;">+</button>
+
+                                <button class="btn">-</button>
+                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <button class="btn" style="margin-right: 15px;">+</button>
+
+                            </div>
+
+                            <hr />
+
+                            <div class="container-duo">
+                                <h5>Unisex Relaxed-fit T-shirt</h5>
+                            </div>
+
+                            <div class="container-information">
+                                <div class="cont clearfix">
+                                    <div class="box"></div>
+                                    <h4>Burgundy</h4>
+                                </div>
+                                <p>
+                                    Slim fitting jersey t-shirt for men<br />
+                                    94% cotton, 6% elastane
+                                </p>
+
+                                <hr style="width: 300px;"/>
+
+                                <div class="title-small" style="margin-bottom: 10px;">
+                                    One lettering, 2 images
+                                </div>
+
+                                <table>
+                                    <tr>
+                                        <td>Front</td>
+                                        <td>3 colors</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Right Sleeve</td>
+                                        <td>2 colors</td>
+                                    </tr>
+                                </table>
+
+                                <table class="right-table">
+                                    <tr>
+                                        <td>Price per Item</td>
+                                        <td>$7.69</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-size: 22px;">Subtotal</td>
+                                        <td style="font-size: 22px;">$23.07</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button class="btn-bottom">Continue Designing</button>
+                        <button class="btn-bottom" style="background: #2EBB57; left: 635px;">Place Order</button>
+
+                    </div>
+                    <!--//-->
+
+
+
+                </div>
+
+
             </div>
-            <!--//-->
-
-            <!-- Get Guote View, Lena -->
-            <div id="get-quote-view">
-                <i class="glyphicon glyphicon-remove-circle"></i>
-                <div class="container wrap-order">
-                  <button class="close">&times;</button>
-
-                  <div class="title row">  
-                   <h2 style="font-weight: normal; text-shadow: 0 0 1px #ddd; color: #aaa;">Get a Quote</h2>    
-               </div> 
-
-               <div class="title-small">Sizes and Quantities</div>
-
-               <div class="ctrl-wrap col-md-12"> 
-
-                 <div class="letter-cont clearfix">
-                    <h3>S</h3>
-                    <h3 style="margin-left: 43px;">M</h3>
-                    <h3 style="margin-left: 43px;">L</h3>
-                    <h3 style="margin-left: 44px;">XL</h3>
-                    <h3>2X</h3>
-                    <h3>3X</h3>
-                    <h3 style="margin-left: 35px;">4X</h3>
-                </div>
-
-                <div class="container button clearfix">
-                    <button class="btn">-</button>
-                    <input class="span2" id="appendedInputButton" size="1" type="text">
-                    <button class="btn" style="margin-right: 15px;">+</button>
-
-                    <button class="btn">-</button>
-                    <input class="span2" id="appendedInputButton" size="1" type="text">
-                    <button class="btn" style="margin-right: 15px;">+</button> 
+        </div>
 
 
-                    <button class="btn">-</button>
-                    <input class="span2" id="appendedInputButton" size="1" type="text">
-                    <button class="btn" style="margin-right: 15px;">+</button>
-
-
-                    <button class="btn">-</button>
-                    <input class="span2" id="appendedInputButton" size="1" type="text">
-                    <button class="btn" style="margin-right: 15px;">+</button> 
-
-
-                    <button class="btn">-</button>
-                    <input class="span2" id="appendedInputButton" size="1" type="text">
-                    <button class="btn" style="margin-right: 15px;">+</button>
-
-                    <button class="btn">-</button>
-                    <input class="span2" id="appendedInputButton" size="1" type="text">
-                    <button class="btn" style="margin-right: 15px;">+</button>
-
-                    <button class="btn">-</button>
-                    <input class="span2" id="appendedInputButton" size="1" type="text">
-                    <button class="btn" style="margin-right: 15px;">+</button>
-
-                </div>
-
-                <hr />
-
-                <div class="container-duo">
-                    <h5>Unisex Relaxed-fit T-shirt</h5>
-                </div>
-
-                <div class="container-information">
-                    <div class="cont clearfix">
-                       <div class="box"></div>
-                       <h4>Burgundy</h4>
-                   </div>
-                   <p>
-                       Slim fitting jersey t-shirt for men<br />
-                       94% cotton, 6% elastane
-                   </p>
-
-                   <hr style="width: 300px;"/>
-
-                   <div class="title-small" style="margin-bottom: 10px;">
-                       One lettering, 2 images
-                   </div>
-
-                   <table>
-                       <tr>
-                          <td>Front</td>
-                          <td>3 colors</td>
-                      </tr>
-                      <tr>
-                          <td>Right Sleeve</td>
-                          <td>2 colors</td>
-                      </tr>
-                  </table>
-
-                  <table class="right-table">
-                   <tr>
-                      <td>Price per Item</td>
-                      <td>$7.69</td>
-                  </tr>
-                  <tr>
-                      <td style="font-size: 22px;">Subtotal</td>
-                      <td style="font-size: 22px;">$23.07</td>
-                  </tr>
-              </table>
-          </div>
-      </div>
-
-      <button class="btn-bottom">Continue Designing</button>
-      <button class="btn-bottom" style="background: #2EBB57; left: 635px;">Place Order</button>
-
-  </div>
-  <!--//-->
-
-
-
-</div>
-
-
-</div>
-</div>
 
 
 
