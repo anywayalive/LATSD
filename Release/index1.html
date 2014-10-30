@@ -867,6 +867,20 @@
                             <button class="btn btn-default" id="add-text-btn" type="button" data-bind="click: addText, enable: selectedLetteringVO().text().length > 0, visible: !strictTemplate()">Add</button>
                         </div>
                         
+					
+                                    <div class="btn-group options" style="width:100%">
+									
+                                        <button class="btn btn-default" type="button" id="font-btn" data-bind="text: selectedFont().name, style: { fontFamily: selectedFont().fontFamily }" data-toggle="dropdown"></button>
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="font-dropdown-btn" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" id="font-list" data-bind="foreach: fonts" style="height: 300px; overflow-y: scroll;">
+                                            <li data-bind="css: { active: $root.selectedLetteringVO().formatVO().fontFamily() === $data.fontFamily }">
+                                                <a data-bind="text: $data.name, click: $root.selectFont, style: { fontFamily: $data.fontFamily }"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+						
                         <div id="text-align-group" class="btn-group" data-toggle="buttons" data-bind="radio: selectedLetteringVO().formatVO().textAlign">
                             <label id="text-align-left-btn" class="btn btn-default" data-bind="css: { disabled: !textAlignEnabled() }"><span class="glyphicon glyphicon-align-left"></span>
                                 <input type="radio" name="rb-text-align-group" value="left" data-bind="enable: textAlignEnabled()">
@@ -888,7 +902,7 @@
                         
                         <div id="text-font-options">
                              <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
-                             <input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
+                             <input id="text-stroke-color-picker" style="float:right; width: 30px" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
                        </div>
                         
                         <!--
@@ -898,7 +912,11 @@
                             <input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
                         </div>
                         -->
-                        <div>   
+						
+                         <div id="zoom-slider" class="noUiSlider" data-bind=""></div>
+							
+                        
+						<div>   
                             <span>Letter spacing</span>
                             <input type="range" min="0" max="100" step="1" value="50">
                         </div>
