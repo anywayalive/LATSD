@@ -966,8 +966,28 @@
                             <div class="btn-group">
                                <button type="button" class="btn btn-default" data-bind="click: copy"><img src="img/copy.png" alt="copy" width="20" height="20"></button>
                                <button type="button" class="btn btn-default" data-bind="click: paste"><img src="img/paste.png" alt="paste" width="20" height="20"></button>
-                               <button type="button" class="btn btn-default"><img src="img/align.png" alt="align" width="20" height="20"></button>
-                               <button type="button" class="btn btn-default"><img src="img/layers.png" alt="layers" width="20" height="20"></button>
+                              <div class="btn-group dropdown">
+                               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/align.png" alt="align" width="20" height="20">
+                            <span class="caret"></span>
+                   
+                               </button></div>
+                               <ul class="dropdown-menu">
+                               		<li><a data-bind="click: align.bind($data, 'left')"></a></li>
+                            		<li><a data-bind="click: align.bind($data, 'hcenter')"></a></li>
+                           			<li><a data-bind="click: align.bind($data, 'right')"></a></li>
+                               </ul>
+                               <div class="btn-group dropdown">
+                               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/layers.png" alt="layers" width="20" height="20">
+                               <span class="caret"></span>
+                               </button></div>
+                               <ul class="dropdown-menu">
+                               		<li><a>1</a></li>
+                            		<li><a>2</a></li>
+                           			<li><a>3</a></li>
+                               </ul>
+                               
+                   
+                               
                                 <button type="button" class="btn btn-default">Fill<span class="glyphicon glyphicon-indent-righ"></span></button>
                                 <button type="button" class="btn btn-default">Stroke<span class="glyphicon glyphicon-indent-righ"></span></button>
 
@@ -978,7 +998,7 @@
                     </div>
                     <div class="share"> 
                         <div class="btn-toolbar">
-                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-share-alt"></span></button>
+                            <button type="button" class="btn btn-default" data-bind="value: $root.shareLink()"><span class="glyphicon glyphicon-share-alt"></span></button>
 
                         </div>
                     </div>
