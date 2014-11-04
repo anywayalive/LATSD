@@ -912,12 +912,7 @@
                             <input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
                         </div>
                         -->
-<<<<<<< HEAD
-						
-                         <div id="zoom-slider" class="noUiSlider" data-bind=""></div>
-							
-                        
-						<div>   
+						<div>  
                             <span data-bind="visible: showLetterSpacingSlider()">Letter spacing</span>
 							<span id="letter-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().letterSpacing(), visible: showLetterSpacingSlider()"></span>
 							<div id="text-letter-spacing-slider-new" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().letterSpacing,
@@ -928,32 +923,19 @@
                             <input id="letter-space" type="text" data-slider-min="0" data-slider-max="30"
                                    data-slider-step="1"
                                    data-slider-value="1">-->
-=======
-
-                        <div id="zoom-slider" class="noUiSlider" data-bind=""></div>
-
-
-                        <div>   
-                            <span>Letter spacing</span>
-                            <input type="range" min="0" max="100" step="1" value="50">
->>>>>>> origin/MainMenu
                         </div>
                         <div>
                             <span data-bind="visible: showLineLeadingSlider()">Line spacing</span>
-							<span id="line-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().lineLeading(), visible: showLineLeadingSlider()"></span>
-							<div id="text-line-leading-slider-new" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().lineLeading,
-								rangeStart: 0, rangeEnd: 3, step: 0.05, decimals: 2, visible: showLineLeadingSlider()"></div>
-						<!--<div>	
-							 <span id="line-space-val" class="pull-right">35</span>
-						</div>-->
+                           <span id="line-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().lineLeading(), visible: showLineLeadingSlider()"></span>
+                           <div id="text-line-leading-slider-new" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().lineLeading,
+                               rangeStart: 0, rangeEnd: 3, step: 0.05, decimals: 2, visible: showLineLeadingSlider()"></div>
+                       <!--<div>   
+                            <span id="line-space-val" class="pull-right">35</span>
+                       </div>-->
                             <!--<input id="line-space" type="text" data-slider-min="0" data-slider-max="300"
                                data-slider-step="1"
                                data-slider-value="35">-->
                         </div>  
-						<!--<h6 data-bind="visible: showLetterSpacingSlider()">Letter Spacing</h6>
-                            <div id="text-letter-spacing-slider" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().letterSpacing, rangeStart: 0, rangeEnd: 20, step: 1, visible: showLetterSpacingSlider()"></div>
-                            <h6 data-bind="visible: showLineLeadingSlider()">Line Spacing</h6>
-                            <div id="text-line-leading-slider" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().lineLeading, rangeStart: 0, rangeEnd: 3, step: 0.05, decimals: 2, visible: showLineLeadingSlider()"></div>-->
                         <div>
                             <span data-bind="visible: showTextEffects()">Text effect</span>
                         </div>  
