@@ -448,3 +448,11 @@ button#add-text-btn{
 /*Tanya*/	
 
 /*Katya*/
+
+/* Oleg */
+.canvas-container-wrap {
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    z-index: 0;
+}

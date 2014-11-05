@@ -1,144 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>LiveArt HTML5</title>
-        <!-- Libs for general usage -->
-        <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
-        <!--<script type="text/javascript">jQuery.noConflict();</script>-->
-        <script type="text/javascript" src="lib/knockout-2.2.1.js"></script>
+<head>
+    <meta charset="utf-8">
+    <title>LiveArt HTML5</title>
+    <!-- Libs for general usage -->
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <!--<script type="text/javascript">jQuery.noConflict();</script>-->
+    <script type="text/javascript" src="lib/knockout-2.2.1.js"></script>
 
-        <!-- LiveArt UI resources -->
-        <!-- Twitter Bootstrap -->
-        <script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
-        <link type="text/css" href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
-        <!-- noUiSlider -->
-        <script type="text/javascript" src="assets/js/jquery.nouislider.min.js"></script>
-        <link type="text/css" href="assets/css/jquery.nouislider.min.css" rel="stylesheet" />
+    <!-- LiveArt UI resources -->
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
+    <link type="text/css" href="assets/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <!-- noUiSlider -->
+    <script type="text/javascript" src="assets/js/jquery.nouislider.min.js"></script>
+    <link type="text/css" href="assets/css/jquery.nouislider.min.css" rel="stylesheet" />
 
-        <!-- Color Picker -->
-        <script type="text/javascript" src="assets/js/jquery.colorPicker.js"></script>
-        <link rel="stylesheet" href="assets/css/colorPicker.css" type="text/css" />
-        <!-- farbtastic color picker -->
-        <script type="text/javascript" src="assets/js/farbtastic.js"></script>
-        <link rel="stylesheet" href="assets/css/farbtastic.css" type="text/css" />
-        <!-- tooltipster -->
-        <script type="text/javascript" src="assets/js/jquery.tooltipster.min.js"></script>
-        <link type="text/css" href="assets/css/tooltipster.css" rel="stylesheet" />
-        <link type="text/css" href="assets/css/tooltipster-noir.css" rel="stylesheet" />
+    <!-- Color Picker -->
+    <script type="text/javascript" src="assets/js/jquery.colorPicker.js"></script>
+    <link rel="stylesheet" href="assets/css/colorPicker.css" type="text/css" />
+    <!-- farbtastic color picker -->
+    <script type="text/javascript" src="assets/js/farbtastic.js"></script>
+    <link rel="stylesheet" href="assets/css/farbtastic.css" type="text/css" />
+    <!-- tooltipster -->
+    <script type="text/javascript" src="assets/js/jquery.tooltipster.min.js"></script>
+    <link type="text/css" href="assets/css/tooltipster.css" rel="stylesheet" />
+    <link type="text/css" href="assets/css/tooltipster-noir.css" rel="stylesheet" />
 
-        <script type="text/javascript" src="assets/js/jquery.PrintArea.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.PrintArea.js"></script>
 
-        <!-- Customs styles and scripts -->
-        <link type="text/css" href="assets/css/style.css" rel="stylesheet" />
+    <!-- Customs styles and scripts -->
+    <link type="text/css" href="assets/css/style.css" rel="stylesheet" />
 
-        <!-- LiveArt Designer libs -->
-        <script type="text/javascript" src="lib/LALibs.js"></script>
-        <script type="text/javascript" src="LiveArtJS.js"></script>
+    <!-- LiveArt Designer libs -->
+    <script type="text/javascript" src="lib/LALibs.js"></script>
+    <script type="text/javascript" src="LiveArtJS.js"></script>
 
-        <!-- LiveArt Designer Fonts -->
-        <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
-        <link rel="stylesheet" href="../css/style.css">
-        <script src="../js/scripts.js"></script>
-    </head>
+    <!-- LiveArt Designer Fonts -->
+    <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/scripts.js"></script>
+</head>
 
-    <body>
-        <div id="liveart-main-container">
-            <div id="liveart-header"></div>
+<body>
+    <div id="liveart-main-container">
+        <div id="liveart-header"></div>
 
-            <div id="liveart-init-preloader" data-bind="visible: !$root.status().completed">
-                <h5 data-bind="text: $root.status().message" class="text-center text-info"></h5>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-striped active" role="progressbar" data-bind="style: { width: $root.percentCompleted() }"></div>
-                </div>
+        <div id="liveart-init-preloader" data-bind="visible: !$root.status().completed">
+            <h5 data-bind="text: $root.status().message" class="text-center text-info"></h5>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" data-bind="style: { width: $root.percentCompleted() }"></div>
             </div>
+        </div>
 
-            <!-- data-bind="style: {visibility: $root.status().completed ? 'visible' : 'hidden'}" style="visibility:hidden" -->
-            <div id="liveart-content" data-bind="visible: $root.status().completed" style="display: none">
-                <div id="main-controls-container" class="liveart-panel-container">
-                    <div id="main-controls-content">
-                        <ul class="nav nav-stacked liveart-list-view" id="liveart-main-menu">
-                            <li id="select-product" class="liveart-dropdown" data-bind="visible: showProductSelector()">
-                                <a>
-                                    <span>Select Product</span>
-                                </a>
-                                <div id="select-product-form" class="dropdown-menu liveart-panel liveart-dropdown-form">
-                                    <div class="liveart-dropdown-form-header">
-                                        Select Product
-                                        <span data-bind="if: $root.selectedProductCategoryVO">/ <span data-bind="    text: $root.selectedProductCategoryVO().name"></span></span>
-                                        <a class="liveart-close-window-btn"></a>
+        <!-- data-bind="style: {visibility: $root.status().completed ? 'visible' : 'hidden'}" style="visibility:hidden" -->
+        <div id="liveart-content" data-bind="visible: $root.status().completed" style="display: none">
+            <div id="main-controls-container" class="liveart-panel-container">
+                <div id="main-controls-content">
+                    <ul class="nav nav-stacked liveart-list-view" id="liveart-main-menu">
+                        <li id="select-product" class="liveart-dropdown" data-bind="visible: showProductSelector()">
+                            <a>
+                                <span>Select Product</span>
+                            </a>
+                            <div id="select-product-form" class="dropdown-menu liveart-panel liveart-dropdown-form">
+                                <div class="liveart-dropdown-form-header">
+                                    Select Product
+                                    <span data-bind="if: $root.selectedProductCategoryVO">/ <span data-bind="    text: $root.selectedProductCategoryVO().name"></span></span>
+                                    <a class="liveart-close-window-btn"></a>
+                                </div>
+                                <div id="products-search" class="search-box">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                                        <input type="text" class="form-control" placeholder="Search" data-bind="value: productsSearchQuery, valueUpdate: 'input'">
+                                        <button class="close" aria-hidden="true" data-bind="visible: productsSearchQuery().length > 0, click: clearProductsSearch">&times;</button>
                                     </div>
-                                    <div id="products-search" class="search-box">
-                                        <div class="input-group">
-                                            <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
-                                            <input type="text" class="form-control" placeholder="Search" data-bind="value: productsSearchQuery, valueUpdate: 'input'">
-                                            <button class="close" aria-hidden="true" data-bind="visible: productsSearchQuery().length > 0, click: clearProductsSearch">&times;</button>
-                                        </div>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <ul id="liveart-product-categories" data-bind="foreach: productCategories, visible: productsSearchQuery().length == 0" class="thumbnails liveart-categories-thumbnails">
-                                        <li data-bind="css: { active: $data.id == $root.selectedProductCategoryVO().id() }, style: { backgroundImage: 'url(' + thumbUrl + ')' }, click: $root.selectProductCategory" class="thumbnail">
-                                            <a data-bind="text: name"></a>
+                                </div>
+                                <div class="divider"></div>
+                                <ul id="liveart-product-categories" data-bind="foreach: productCategories, visible: productsSearchQuery().length == 0" class="thumbnails liveart-categories-thumbnails">
+                                    <li data-bind="css: { active: $data.id == $root.selectedProductCategoryVO().id() }, style: { backgroundImage: 'url(' + thumbUrl + ')' }, click: $root.selectProductCategory" class="thumbnail">
+                                        <a data-bind="text: name"></a>
+                                    </li>
+                                </ul>
+                                <div id="liveart-product-gallery" data-bind="visible: productsSearchQuery().length > 0">
+                                    <a class="liveart-back-btn" data-bind="click: hideProductsGallery, visible: productsSearchQuery().length == 0"></a>
+                                    <ul id="liveart-products-list" data-bind="foreach: currentProducts" class="thumbnails liveart-thumbnails">
+                                        <li>
+                                            <a data-bind="click: $root.selectProduct, css: { active: $data.id == $root.selectedProductVO().id() }" class="thumbnail liveart-thumbnail">
+                                                <div class="liveart-thumbnail-state"></div>
+                                                <img src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">
+                                                <span style="text-overflow: ellipsis;" data-bind="text: name"></span>
+                                            </a>
                                         </li>
                                     </ul>
-                                    <div id="liveart-product-gallery" data-bind="visible: productsSearchQuery().length > 0">
-                                        <a class="liveart-back-btn" data-bind="click: hideProductsGallery, visible: productsSearchQuery().length == 0"></a>
-                                        <ul id="liveart-products-list" data-bind="foreach: currentProducts" class="thumbnails liveart-thumbnails">
-                                            <li>
-                                                <a data-bind="click: $root.selectProduct, css: { active: $data.id == $root.selectedProductVO().id() }" class="thumbnail liveart-thumbnail">
-                                                    <div class="liveart-thumbnail-state"></div>
-                                                    <img src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">
-                                                    <span style="text-overflow: ellipsis;" data-bind="text: name"></span>
-                                                </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li id="main-controls-product-dimensions" class="liveart-panel" data-bind="visible: selectedProductVO().resizable()">
+                            <div class="form-horizontal">
+                                <div class="control-group" data-bind="visible: selectedProductVO().editableAreaSizes().length == 0">
+                                    <label class="control-label" for="productDimensionsWidth">Width</label>
+                                    <div class="controls">
+                                        <input type="number" id="productDimensionsWidth" data-bind="value: selectedProductSizeVO().width, valueUpdate: 'input'" data-placement="right" maxlength="5" class="form-control" placeholder="Width">
+                                    </div>
+                                </div>
+                                <div class="control-group" data-bind="visible: selectedProductVO().editableAreaSizes().length == 0">
+                                    <label class="control-label" for="productDimensionsHeight">Height</label>
+                                    <div class="controls">
+                                        <input type="number" id="productDimensionsHeight" data-bind="value: selectedProductSizeVO().height, valueUpdate: 'input'" data-placement="right" maxlength="5" class="form-control" placeholder="Height">
+                                    </div>
+                                </div>
+                                <div data-bind="visible: selectedProductVO().editableAreaSizes().length > 0">
+                                    <label>Select Size</label>
+                                    <div class="btn-group">
+                                        <button id="selectedProductSize" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-bind="text: selectedProductSizeVO().label"></button>
+                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" data-bind="foreach: selectedProductVO().editableAreaSizes">
+                                            <li data-bind="css: { active: ($root.selectedProductSizeVO().width() === $data.width && $root.selectedProductSizeVO().height() === $data.height) }">
+                                                <a data-bind="text: $data.label, click: $root.selectProductSize"></a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                            </li>
+                            </div>
+                        </li>
 
-                            <li id="main-controls-product-dimensions" class="liveart-panel" data-bind="visible: selectedProductVO().resizable()">
-                                <div class="form-horizontal">
-                                    <div class="control-group" data-bind="visible: selectedProductVO().editableAreaSizes().length == 0">
-                                        <label class="control-label" for="productDimensionsWidth">Width</label>
-                                        <div class="controls">
-                                            <input type="number" id="productDimensionsWidth" data-bind="value: selectedProductSizeVO().width, valueUpdate: 'input'" data-placement="right" maxlength="5" class="form-control" placeholder="Width">
-                                        </div>
-                                    </div>
-                                    <div class="control-group" data-bind="visible: selectedProductVO().editableAreaSizes().length == 0">
-                                        <label class="control-label" for="productDimensionsHeight">Height</label>
-                                        <div class="controls">
-                                            <input type="number" id="productDimensionsHeight" data-bind="value: selectedProductSizeVO().height, valueUpdate: 'input'" data-placement="right" maxlength="5" class="form-control" placeholder="Height">
-                                        </div>
-                                    </div>
-                                    <div data-bind="visible: selectedProductVO().editableAreaSizes().length > 0">
-                                        <label>Select Size</label>
-                                        <div class="btn-group">
-                                            <button id="selectedProductSize" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" data-bind="text: selectedProductSizeVO().label"></button>
-                                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" data-bind="foreach: selectedProductVO().editableAreaSizes">
-                                                <li data-bind="css: { active: ($root.selectedProductSizeVO().width() === $data.width && $root.selectedProductSizeVO().height() === $data.height) }">
-                                                    <a data-bind="text: $data.label, click: $root.selectProductSize"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                        <li id="add-text" class="liveart-dropdown" data-bind="visible: !strictTemplate() || hasSelected()">
+                            <a>
+                                <span data-bind="visible: !strictTemplate()">Add/Edit Text</span>
+                                <span data-bind="visible: strictTemplate()">Edit Text</span>
+                            </a>
+                            <div id="add-text-form" class="dropdown-menu liveart-panel liveart-dropdown-form">
+                                <div class="liveart-dropdown-form-header">
+                                    <span class="liveart-form-header-title" data-bind="if: !strictTemplate()">Add/Edit Text</span>
+                                    <span class="liveart-form-header-title" data-bind="if: strictTemplate()">Edit Text</span>
+                                    <a class="liveart-close-window-btn"></a>
                                 </div>
-                            </li>
-
-                            <li id="add-text" class="liveart-dropdown" data-bind="visible: !strictTemplate() || hasSelected()">
-                                <a>
-                                    <span data-bind="visible: !strictTemplate()">Add/Edit Text</span>
-                                    <span data-bind="visible: strictTemplate()">Edit Text</span>
-                                </a>
-                                <div id="add-text-form" class="dropdown-menu liveart-panel liveart-dropdown-form">
-                                    <div class="liveart-dropdown-form-header">
-                                        <span class="liveart-form-header-title" data-bind="if: !strictTemplate()">Add/Edit Text</span>
-                                        <span class="liveart-form-header-title" data-bind="if: strictTemplate()">Edit Text</span>
-                                        <a class="liveart-close-window-btn"></a>
-                                    </div>
-                                    <div id="add-text-form-content">
+                                <div id="add-text-form-content">
                                         <!--div class="input-append" style="width: 100%;">
                                             <input id="add-text-input" data-bind="value: selectedLetteringVO().text, valueUpdate: 'input', enable: editTextEnabled(), visible: !strictTemplate()" type="text" placeholder="Your text here">
                                             <input id="edit-text-input" data-bind="value: selectedLetteringVO().text, valueUpdate: 'input', enable: editTextEnabled(), visible: strictTemplate()" type="text" placeholder="Your text here">
@@ -157,10 +157,10 @@
                                                   <input type="radio" name="rb-text-align-group" value="right" data-bind="enable: textAlignEnabled()">
                                               </label>
                                           </div>  -->
-                                        <button class="btn btn-default" id="add-text-btn" type="button" data-bind="click: addText, enable: selectedLetteringVO().text().length > 0, visible: !strictTemplate()">Add</button>
-                                        <div class="divider"></div>
-                                        <h6>Font options</h6>
-                                        <div class="btn-group">
+                                          <button class="btn btn-default" id="add-text-btn" type="button" data-bind="click: addText, enable: selectedLetteringVO().text().length > 0, visible: !strictTemplate()">Add</button>
+                                          <div class="divider"></div>
+                                          <h6>Font options</h6>
+                                          <div class="btn-group">
                                             <button class="btn btn-default" type="button" id="font-btn" data-bind="text: selectedFont().name, style: { fontFamily: selectedFont().fontFamily }" data-toggle="dropdown"></button>
                                             <button class="btn btn-default dropdown-toggle" type="button" id="font-dropdown-btn" data-toggle="dropdown">
                                                 <span class="caret"></span>
@@ -181,13 +181,13 @@
                                                                                      
                                                                                      
                                          </div> -->
-                                        <div class="divider"></div>
-                                        <h6 data-bind="visible: showLetterSpacingSlider()">Letter Spacing</h6>
-                                        <div id="text-letter-spacing-slider" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().letterSpacing, rangeStart: 0, rangeEnd: 20, step: 1, visible: showLetterSpacingSlider()"></div>
-                                        <h6 data-bind="visible: showLineLeadingSlider()">Line Spacing</h6>
-                                        <div id="text-line-leading-slider" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().lineLeading, rangeStart: 0, rangeEnd: 3, step: 0.05, decimals: 2, visible: showLineLeadingSlider()"></div>
-                                        <h6 data-bind="visible: showTextEffects()">Text Effects</h6>
-                                        <div data-bind="visible: showTextEffects()" class="btn-group">
+                                         <div class="divider"></div>
+                                         <h6 data-bind="visible: showLetterSpacingSlider()">Letter Spacing</h6>
+                                         <div id="text-letter-spacing-slider" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().letterSpacing, rangeStart: 0, rangeEnd: 20, step: 1, visible: showLetterSpacingSlider()"></div>
+                                         <h6 data-bind="visible: showLineLeadingSlider()">Line Spacing</h6>
+                                         <div id="text-line-leading-slider" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().lineLeading, rangeStart: 0, rangeEnd: 3, step: 0.05, decimals: 2, visible: showLineLeadingSlider()"></div>
+                                         <h6 data-bind="visible: showTextEffects()">Text Effects</h6>
+                                         <div data-bind="visible: showTextEffects()" class="btn-group">
                                             <button class="btn btn-default" type="button" id="text-effects-btn" data-bind="text: selectedTextEffectVO().label()" data-toggle="dropdown"><span class="caret"></span></button>
                                             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
                                                 <span class="caret"></span>
@@ -348,9 +348,9 @@
                         </ul>
                     </div>
                 </div>
-                <div id="canvas-container">
+                <!--<div id="canvas-container">-->
                     <!-- LiveArtJS core goes here -->
-                </div>
+                <!--</div>-->
 
                 <!-- Product side swictch -->
                 <div id="product-sides-switch-container" class="liveart-panel-container" data-bind="visible: selectedProductVO().locations().length > 1">
@@ -368,7 +368,7 @@
                 <div id="preview-controls-container" class="liveart-panel-container">
                     <!--                <div class="navbar liveart-button-bar">
                     <div class="navbar-inner">-->
-                    <ul class="nav nav-pills liveart-button-bar">
+                        <ul class="nav nav-pills liveart-button-bar">
                         <!--<li id="layers" class="dropup">
                           <a id="layers-btn" class="dropdown-toggle" data-toggle="dropdown">Layers</a>
                           <ul id="layers-list" class="dropdown-menu">
@@ -413,8 +413,8 @@
                               </li>
                           </ul>
                         </li>
-                        -->
-                        <li id="clear-design" data-bind="visible: !strictTemplate()"><a id="clear-design-btn" data-bind="    click: clearDesign"><span>Clear Design</span></a></li>
+                    -->
+                    <li id="clear-design" data-bind="visible: !strictTemplate()"><a id="clear-design-btn" data-bind="    click: clearDesign"><span>Clear Design</span></a></li>
                         <!--
                         <li id="undo"><a id="undo-btn"><span>Undo</span></a></li>
                         <li id="redo"><a id="redo-btn"><span>Redo</span></a></li>-->
@@ -522,28 +522,28 @@
                 </div>-->
                     <!-- <div id="preview-controls-content" class="liveart-panel">
                 </div> -->
-                </div>
+            </div>
 
-                <div id="order-options-container" class="liveart-panel-container">
-                    <div id="product-info-panel" class="liveart-panel">
-                        <h5 id="liveart-product-name" data-bind="text: selectedProductVO().name"></h5>
-                        <h6 data-bind="visible: $root.selectedProductVO().price">$<span data-bind="    text: selectedProductVO().price"></span> for each</h6>
-                        <h6 data-bind="text: selectedProductVO().description" class="description height-restriction"></h6>
-                        <h6 data-bind="visible: $root.showProductColorPicker">Color: <span data-bind="    text: selectedProductColorVO().name"></span></h6>
-                        <table class="gray order-colors" data-bind="foreach: $root.designInfo().colors">
-                            <tr>
-                                <td data-bind="text: $data.location"></td>
-                                <td data-bind="text: $root.colorsCount($data.count)"></td>
-                            </tr>
-                        </table>
-                        <div class="divider"></div>
-                        <div class="gray"><span data-bind="text: objectsCount()"></span></div>
-                    </div>
-                    <div id="product-sizes-panel" class="liveart-panel">
-                        <div>
-                            <ul id="product-sizes-list" class="list-unstyled" data-bind="foreach: quantities">
-                                <li>
-                                    <span class="quantity-label" data-bind="visible: $root.selectedProductVO().sizes().length < 1">Quantity:</span>
+            <div id="order-options-container" class="liveart-panel-container">
+                <div id="product-info-panel" class="liveart-panel">
+                    <h5 id="liveart-product-name" data-bind="text: selectedProductVO().name"></h5>
+                    <h6 data-bind="visible: $root.selectedProductVO().price">$<span data-bind="    text: selectedProductVO().price"></span> for each</h6>
+                    <h6 data-bind="text: selectedProductVO().description" class="description height-restriction"></h6>
+                    <h6 data-bind="visible: $root.showProductColorPicker">Color: <span data-bind="    text: selectedProductColorVO().name"></span></h6>
+                    <table class="gray order-colors" data-bind="foreach: $root.designInfo().colors">
+                        <tr>
+                            <td data-bind="text: $data.location"></td>
+                            <td data-bind="text: $root.colorsCount($data.count)"></td>
+                        </tr>
+                    </table>
+                    <div class="divider"></div>
+                    <div class="gray"><span data-bind="text: objectsCount()"></span></div>
+                </div>
+                <div id="product-sizes-panel" class="liveart-panel">
+                    <div>
+                        <ul id="product-sizes-list" class="list-unstyled" data-bind="foreach: quantities">
+                            <li>
+                                <span class="quantity-label" data-bind="visible: $root.selectedProductVO().sizes().length < 1">Quantity:</span>
                                     <!--<div class="btn-group" data-bind="visible: $root.selectedProductVO().sizes().length > 1">
                                         <button class="btn btn-default dropdown-toggle size-btn" type="button" data-toggle="dropdown">
                                             <span class="size-btn-label" data-bind="text: $data.size"></span>
@@ -556,8 +556,8 @@
                                         </ul>
                                     </div>-->
                                     <select class="btn btn-default" data-bind=" visible: $root.selectedProductVO().sizes().length > 1,
-                                    options: $root.selectedProductVO().sizes,
-                                    value: size">
+                                        options: $root.selectedProductVO().sizes,
+                                        value: size">
                                     </select>
 
                                     <span class="btn-group-quantity">
@@ -825,21 +825,21 @@
         <!--<div id="divLog"></div>
             <button onclick="magic()">Magic!</button>
             <button onclick="magic2()">Magic2</button>-->
-        <div class="container-fixed">
-            <div id="menu">
-                <button type="button" class="btn btn-default menu-icon-1" 
-                        data-toggle="tooltip" data-placement="right" title="Tooltip on right">1</button>
-                <button type="button" class="btn btn-default menu-icon-2" 
-                        data-toggle="tooltip" data-placement="right" title="font-option">2</button>
-                <button type="button" class="btn btn-default menu-icon-3" 
-                        data-toggle="tooltip" data-placement="right" title="Initial View">3</button>
-                <button type="button" class="btn btn-default menu-icon-4" disabled
-                        data-toggle="tooltip" data-placement="right" title="Tooltip on right">4</button>
+            <div class="container-fixed">
+                <div id="menu">
+                    <button type="button" class="btn btn-default menu-icon-1" 
+                    data-toggle="tooltip" data-placement="right" title="Tooltip on right">1</button>
+                    <button type="button" class="btn btn-default menu-icon-2" 
+                    data-toggle="tooltip" data-placement="right" title="font-option">2</button>
+                    <button type="button" class="btn btn-default menu-icon-3" 
+                    data-toggle="tooltip" data-placement="right" title="Initial View">3</button>
+                    <button type="button" class="btn btn-default menu-icon-4" disabled
+                    data-toggle="tooltip" data-placement="right" title="Tooltip on right">4</button>
 
-                <!-- Zoom, Tanya -->
-                <div class="zoom">
-                    <h6>Zoom: <span data-bind="text: (zoom() + '%')"></span></h6>
-                    <div id="zoom-slider" class="noUiSlider" data-bind="slider: zoom, rangeStart: minZoom(), rangeEnd: maxZoom()"></div>
+                    <!-- Zoom, Tanya -->
+                    <div class="zoom">
+                        <h6>Zoom: <span data-bind="text: (zoom() + '%')"></span></h6>
+                        <div id="zoom-slider" class="noUiSlider" data-bind="slider: zoom, rangeStart: minZoom(), rangeEnd: maxZoom()"></div>
                     <!--<div class="zoom-buttons">
                         <div class="btn-toolbar">
                             <div class="btn-group">
@@ -911,32 +911,32 @@
                             <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
                             <input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
                         </div>
-                        -->
-						<div>  
-                            <span data-bind="visible: showLetterSpacingSlider()">Letter spacing</span>
-							<span id="letter-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().letterSpacing(), visible: showLetterSpacingSlider()"></span>
-							<div id="text-letter-spacing-slider-new" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().letterSpacing,
-								rangeStart: 0, rangeEnd: 20, step: 1, visible: showLetterSpacingSlider()"></div>
+                    -->
+                    <div>  
+                        <span data-bind="visible: showLetterSpacingSlider()">Letter spacing</span>
+                        <span id="letter-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().letterSpacing(), visible: showLetterSpacingSlider()"></span>
+                        <div id="text-letter-spacing-slider-new" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().letterSpacing,
+                        rangeStart: 0, rangeEnd: 20, step: 1, visible: showLetterSpacingSlider()"></div>
 						<!--<div>
 							<span id="letter-space-val" class="pull-right">1</span>
 						</div>
                             <input id="letter-space" type="text" data-slider-min="0" data-slider-max="30"
                                    data-slider-step="1"
                                    data-slider-value="1">-->
-                        </div>
-                        <div>
-                            <span data-bind="visible: showLineLeadingSlider()">Line spacing</span>
-                           <span id="line-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().lineLeading(), visible: showLineLeadingSlider()"></span>
-                           <div id="text-line-leading-slider-new" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().lineLeading,
-                               rangeStart: 0, rangeEnd: 3, step: 0.05, decimals: 2, visible: showLineLeadingSlider()"></div>
+                               </div>
+                               <div>
+                                <span data-bind="visible: showLineLeadingSlider()">Line spacing</span>
+                                <span id="line-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().lineLeading(), visible: showLineLeadingSlider()"></span>
+                                <div id="text-line-leading-slider-new" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().lineLeading,
+                                rangeStart: 0, rangeEnd: 3, step: 0.05, decimals: 2, visible: showLineLeadingSlider()"></div>
                        <!--<div>   
                             <span id="line-space-val" class="pull-right">35</span>
-                       </div>-->
+                        </div>-->
                             <!--<input id="line-space" type="text" data-slider-min="0" data-slider-max="300"
                                data-slider-step="1"
                                data-slider-value="35">-->
-                        </div>  
-                        <div>
+                           </div>  
+                           <div>
                             <span data-bind="visible: showTextEffects()">Text effect</span>
                         </div>  
                         <div data-bind="visible: showTextEffects()">
@@ -958,31 +958,36 @@
                                 </li>
                             </ul>
                         </div> 
-                        -->
+                    -->
 
 
+                </div>
+            </form>
+
+        </div>
+        <!--//-->
+
+        <div id="content">
+
+            <!-- Initial View, Tanya -->
+            <div id="initial-view">
+                <h3>Initial view</h3>
+                <div class="canvas-container-wrap">
+                    <div id="canvas-container">
+                        <!-- LiveArtJS core goes here -->
                     </div>
-                </form>
+                </div>
+                <div class="lower_panel">
 
-            </div>
-            <!--//-->
+                    <div class="btn-toolbar">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default" data-bind="click: copy"><img src="img/copy.png" alt="copy" width="20" height="20"></button>
+                            <button type="button" class="btn btn-default" data-bind="click: paste"><img src="img/paste.png" alt="paste" width="20" height="20"></button>
+                            <div class="btn-group dropdown">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/align.png" alt="align" width="20" height="20">
+                                    <span class="caret"></span>
 
-            <div id="content">
-
-                <!-- Initial View, Tanya -->
-                <div id="initial-view">
-                    <h3>Initial view</h3>
-                    <div class="lower_panel">
-
-                        <div class="btn-toolbar">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default" data-bind="click: copy"><img src="img/copy.png" alt="copy" width="20" height="20"></button>
-                                <button type="button" class="btn btn-default" data-bind="click: paste"><img src="img/paste.png" alt="paste" width="20" height="20"></button>
-                                <div class="btn-group dropdown">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/align.png" alt="align" width="20" height="20">
-                                        <span class="caret"></span>
-
-                                    </button></div>
+                                </button></div>
                                 <ul class="dropdown-menu">
                                     <li><a data-bind="click: align.bind($data, 'left')"></a></li>
                                     <li><a data-bind="click: align.bind($data, 'hcenter')"></a></li>
@@ -992,53 +997,53 @@
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/layers.png" alt="layers" width="20" height="20">
                                         <span class="caret"></span>
                                     </button></div>
-                                <ul class="dropdown-menu">
-                                    <li><a>1</a></li>
-                                    <li><a>2</a></li>
-                                    <li><a>3</a></li>
-                                </ul>
+                                    <ul class="dropdown-menu">
+                                        <li><a>1</a></li>
+                                        <li><a>2</a></li>
+                                        <li><a>3</a></li>
+                                    </ul>
 
 
 
-                                <button type="button" class="btn btn-default">Fill<span class="glyphicon glyphicon-indent-righ"></span></button>
-                                <button type="button" class="btn btn-default">Stroke<span class="glyphicon glyphicon-indent-righ"></span></button>
+                                    <button type="button" class="btn btn-default">Fill<span class="glyphicon glyphicon-indent-righ"></span></button>
+                                    <button type="button" class="btn btn-default">Stroke<span class="glyphicon glyphicon-indent-righ"></span></button>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="share"> 
+                            <div class="btn-toolbar">
+                                <button type="button" class="btn btn-default" data-bind="value: $root.shareLink()"><span class="glyphicon glyphicon-share-alt"></span></button>
 
                             </div>
                         </div>
-
-
+                        <a class="btn button-quote" id="quote">Proceed to Quote</a>
                     </div>
-                    <div class="share"> 
-                        <div class="btn-toolbar">
-                            <button type="button" class="btn btn-default" data-bind="value: $root.shareLink()"><span class="glyphicon glyphicon-share-alt"></span></button>
+                    <!--//-->
 
+                    <!-- Product View, Maryna -->
+                    <div id="product-view">
+                        <div class="glyphicon-top">
+                            <i class="glyphicon glyphicon-search"></i>
+                            <i class="glyphicon glyphicon-remove-circle"></i>
                         </div>
-                    </div>
-                    <a class="btn button-quote" id="quote">Proceed to Quote</a>
-                </div>
-                <!--//-->
+                        <h1>Select Product </h1>
+                        <small>All products -> T-Shirts -> Short Sleeve T-Shirts</small>
 
-                <!-- Product View, Maryna -->
-                <div id="product-view">
-                    <div class="glyphicon-top">
-                        <i class="glyphicon glyphicon-search"></i>
-                        <i class="glyphicon glyphicon-remove-circle"></i>
-                    </div>
-                    <h1>Select Product </h1>
-                    <small>All products -> T-Shirts -> Short Sleeve T-Shirts</small>
+                        <div class="row grid-product-categories" data-bind="foreach: productCategories, visible: productsSearchQuery().length == 0">
 
-                    <div class="row grid-product-categories" data-bind="foreach: productCategories, visible: productsSearchQuery().length == 0">
-
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" data-bind="css: { active: $data.id == $root.selectedProductCategoryVO().id() }, style: { backgroundImage: 'url(' + thumbUrl + ')' }, click: $root.selectProductCategory">
-                                <!--<img class="img-responsive" src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">-->
-                                <div class="caption">
-                                    <h3 data-bind="text: name">Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
+                            <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                                <a class="thumbnail" data-bind="css: { active: $data.id == $root.selectedProductCategoryVO().id() }, style: { backgroundImage: 'url(' + thumbUrl + ')' }, click: $root.selectProductCategory">
+                                    <!--<img class="img-responsive" src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">-->
+                                    <div class="caption">
+                                        <h3 data-bind="text: name">Product name</h3>
+                                        <p>price</p> 
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                    </div>
                     <!-- this part have a bug. 
                     <div class="row grid-products" data-bind="foreach: currentProducts, visible: productsSearchQuery().length > 0">
                         <a class="liveart-back-btn" data-bind="click: hideProductsGallery, visible: productsSearchQuery().length === 0"></a>
@@ -1053,179 +1058,179 @@
                             </a>
                         </div>
                     </div>
-                    -->
-                    <div class="row" style="display:none;">
+                -->
+                <div class="row" style="display:none;">
 
 
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
 
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
 
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
 
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
 
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
 
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
 
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
 
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" href="#">
-                                <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                                <div class="caption">
-                                    <h3>Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
-                        </div>                </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                        <a class="thumbnail" href="#">
+                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
+                            <div class="caption">
+                                <h3>Product name</h3>
+                                <p>price</p> 
+                            </div>
+                        </a>
+                    </div>                </div>
 
                     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -1421,4 +1426,4 @@
 
 
     </body>
-</html>
+    </html>
