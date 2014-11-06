@@ -316,8 +316,8 @@ input.form-control {
 #product-sides-switch-container {
     background: transparent; /* for old browsers (IE8) */
     background: rgba(255, 255, 255, 0.4);
-    bottom: 42px;
-    left: 156px;
+    bottom: 0;
+    left: 0;
     width: 587px;
 }
 

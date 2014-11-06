@@ -422,7 +422,7 @@ button#add-text-btn{
     bottom: 23px;
     font-size: 13px;
     margin-left: 300px;
-    width: 350px;
+    width: 450px;
     height: 40px;
     left: -6px;	
 }
@@ -456,3 +456,4 @@ button#add-text-btn{
     margin: 0 auto;
     z-index: 0;
 }
+

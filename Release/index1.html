@@ -974,7 +974,21 @@
                 <h3>Initial view</h3>
                 <div class="canvas-container-wrap">
                     <div id="canvas-container">
-                        <!-- LiveArtJS core goes here -->
+                    
+                        <div id="product-sides-switch-container" class="liveart-panel-container" data-bind="visible: selectedProductVO().locations().length > 1">
+                    <div class="centered-pills-container">
+                        <ul class="nav nav-pills" data-bind="foreach: selectedProductVO().locations">
+                            <li data-bind="css: { active: $data.name == $root.selectedProductLocation() }">
+                                <a data-bind="click: $root.selectProductLocation">
+                                    <span data-bind="text: $data.name"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+                
                     </div>
                 </div>
                 <div class="lower_panel">
@@ -1005,11 +1019,34 @@
 
 
 
-                                    <button type="button" class="btn btn-default">Fill<span class="glyphicon glyphicon-indent-righ"></span></button>
-                                    <button type="button" class="btn btn-default">Stroke<span class="glyphicon glyphicon-indent-righ"></span></button>
+                                    <button type="button" class="btn btn-default">
+                                    <span>Fill</span>
+                                    <input id="text-fill-color-picker-2" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" /></button>
+                                    <button type="button" class="btn btn-default">Stroke <input id="graphics-stroke-color-picker" type="text" class="liveart-color-picker dropup-color-picker" data-bind="colorPicker: selectedGraphicsFormatVO().strokeColor, colorPalette: strokeColors"/></button>
 
                                 </div>
                             </div>
+
+
+
+
+ <li id="graphics-fill" data-bind="visible: isColorizableGraphics">
+                            <a id="graphics-fill-btn" class="liveart-color-picker-btn">
+                                <span>Image Color</span>
+                                <input id="graphics-fill-color-picker" type="text" class="liveart-color-picker dropup-color-picker" data-bind="colorPicker: selectedGraphicsFormatVO().fillColor, colorPalette: colors" />
+                            </a>
+                        </li>
+                        <li id="graphics-stroke" data-bind="visible: isColorizableGraphics">
+                            <a id="graphics-stroke-btn" class="liveart-color-picker-btn">
+                                <span>Image Stroke</span>
+                                <input id="graphics-stroke-color-picker" type="text" class="liveart-color-picker dropup-color-picker" data-bind="colorPicker: selectedGraphicsFormatVO().strokeColor, colorPalette: strokeColors" />
+                            </a>
+                        </li>
+
+
+
+
+
 
 
                         </div>
