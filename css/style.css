@@ -19,15 +19,73 @@
 }
 
 
-.container-fixed #menu button{
+.container-fixed #menu button {
     margin-top: 10px;
     margin-left: 15px;
+	
 }
+
+
+
+.glyphicon-remove-circle:before {
+	content: "x" !important;
+}
+
+
+.btn-default, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+	color: #fff !important;
+	background-color: rgb(77, 77, 77);
+	border-color: #5a5a5a;
+}
+
+
+div.colorPicker-picker.transparent, div.colorPicker-swatch.transparent {
+	width: 30px;
+	margin-left: 12px;
+}
+
+
+
+
 .menu-icon-1,.menu-icon-2,.menu-icon-3,.menu-icon-4 {
     height: 50px;
     width: 50px;
+	border-color: rgb(55, 55, 55);
 }
 
+.menu-icon-1 .active, .menu-icon-1:active {
+	background: url(../Release/img/tooltip_active.png) no-repeat !important;	 
+}
+
+
+.menu-icon-1 {
+	background: url(../Release/img/tooltip.png) no-repeat;
+}
+
+
+.menu-icon-2 {
+	background: url(../Release/img/font.png) no-repeat;
+}
+
+
+.menu-icon-3 {
+	background: url(../Release/img/initial.png) no-repeat;
+}
+
+
+#text-effects-btn.btn {
+
+	color: #fff;	
+	width: 230px;
+
+
+	background-color: rgb(77, 77, 77);
+	border: 1px solid #5a5a5a;
+}
+
+#text-effects-btn .btn-group {
+	height: 28px;
+}
 
 .container-fixed #content {
     width: auto;
@@ -116,6 +174,9 @@ button#add-text-btn{
     position: absolute;
     right: 5px;
     bottom: 15px;
+	color: #ccc !important;
+	background-color: #fff;
+	
 }
 
 .container-fixed #font-option, #product-view, #get-quote-view{
@@ -185,7 +246,9 @@ button#add-text-btn{
 .container-fixed .wrap-order {
     width:910px;
     background:#FFF;
+
     position:relative;
+
     padding: 10px 10px 10px 20px;
     height: 540px;
 }

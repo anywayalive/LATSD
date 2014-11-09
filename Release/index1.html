@@ -828,13 +828,13 @@
             <div class="container-fixed">
                 <div id="menu">
                     <button type="button" class="btn btn-default menu-icon-1" 
-                    data-toggle="tooltip" data-placement="right" title="Tooltip on right">1</button>
+                    data-toggle="tooltip" data-placement="right" title="Tooltip on right"></button>
                     <button type="button" class="btn btn-default menu-icon-2" 
-                    data-toggle="tooltip" data-placement="right" title="font-option">2</button>
+                    data-toggle="tooltip" data-placement="right" title="font-option"></button>
                     <button type="button" class="btn btn-default menu-icon-3" 
-                    data-toggle="tooltip" data-placement="right" title="Initial View">3</button>
+                    data-toggle="tooltip" data-placement="right" title="Initial View"></button>
                     <button type="button" class="btn btn-default menu-icon-4" disabled
-                    data-toggle="tooltip" data-placement="right" title="Tooltip on right">4</button>
+                    data-toggle="tooltip" data-placement="right" title="Tooltip on right" style="background-image: url(../Release/img/upload.png)"></button>
 
                     <!-- Zoom, Tanya -->
                     <div class="zoom">
@@ -868,7 +868,8 @@
                         </div>
 
 
-                        <div class="btn-group options" style="width:100%">
+						<span>Font options</span>
+                        <div class="btn-group options" style="width:100%; margin: 5px 0 5px 0;">
 
                             <button class="btn btn-default" type="button" id="font-btn" data-bind="text: selectedFont().name, style: { fontFamily: selectedFont().fontFamily }" data-toggle="dropdown"></button>
                             <button class="btn btn-default dropdown-toggle" type="button" id="font-dropdown-btn" data-toggle="dropdown">
@@ -892,8 +893,6 @@
                                 <input type="radio" name="rb-text-align-group" value="right" data-bind="enable: textAlignEnabled()">
                             </label>
                         </div> 
-
-
                         <div class="btn-group pull-right">
                             <button class="btn btn-default" type="button" id="bold-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().bold, enable: selectedFont().boldAllowed"><span class="glyphicon glyphicon-bold"></span></button>
                             <button class="btn btn-default" type="button" id="italic-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().italic, enable: selectedFont().italicAllowed"><span class="glyphicon glyphicon-italic"></span></button>
@@ -902,9 +901,8 @@
 
                         <div id="text-font-options">
                             <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
-                            <input id="text-stroke-color-picker" style="float:right; width: 30px" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
+                            <span style="margin-left: 90px; font-size: 14px; padding-top: 5px">Stroke</span><input id="text-stroke-color-picker" style="float:right; width: 30px" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
                         </div>
-
                         <!--
                         <div id="text-font-options">
 
@@ -912,6 +910,7 @@
                             <input id="text-stroke-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
                         </div>
                     -->
+					<div id="zoom-slider" class="noUiSlider" data-bind=""></div>
                     <div>  
                         <span data-bind="visible: showLetterSpacingSlider()">Letter spacing</span>
                         <span id="letter-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().letterSpacing(), visible: showLetterSpacingSlider()"></span>
@@ -923,27 +922,31 @@
                             <input id="letter-space" type="text" data-slider-min="0" data-slider-max="30"
                                    data-slider-step="1"
                                    data-slider-value="1">-->
-                               </div>
-                               <div>
-                                <span data-bind="visible: showLineLeadingSlider()">Line spacing</span>
-                                <span id="line-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().lineLeading(), visible: showLineLeadingSlider()"></span>
-                                <div id="text-line-leading-slider-new" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().lineLeading,
-                                rangeStart: 0, rangeEnd: 3, step: 0.05, decimals: 2, visible: showLineLeadingSlider()"></div>
+                    </div>
+                           <div data-bind="visible: showLineLeadingSlider()">
+                            <span>Line spacing</span>
+							<span id="line-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().lineLeading(), visible: showLineLeadingSlider()" style=""></span>
+							<div id="text-line-leading-slider-new" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().lineLeading,
+								rangeStart: 0, rangeEnd: 3, step: 0.05, decimals: 2, visible: showLineLeadingSlider()" style=""></div>
                        <!--<div>   
                             <span id="line-space-val" class="pull-right">35</span>
                         </div>-->
                             <!--<input id="line-space" type="text" data-slider-min="0" data-slider-max="300"
                                data-slider-step="1"
                                data-slider-value="35">-->
-                           </div>  
-                           <div>
-                            <span data-bind="visible: showTextEffects()">Text effect</span>
                         </div>  
-                        <div data-bind="visible: showTextEffects()">
-                            <select data-bind="foreach: textEffects" class="selectpicker">
-                                <option data-bind="text: $data.label, click: $root.selectTextEffect">None</option>
-                            </select>
-                        </div>    
+							<h6 data-bind="visible: showTextEffects()">Text Effects</h6>
+							<div data-bind="visible: showTextEffects()" class="btn-group" style="height: 28px;">
+                                        <button class="btn btn-default" type="button" id="text-effects-btn" data-bind="text: selectedTextEffectVO().label()" data-toggle="dropdown"><span class="caret"></span></button>
+                                        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" data-bind="foreach: textEffects" style="height: 150px; overflow-y: scroll; width: 100%">
+                                            <li data-bind="css: { active: $root.selectedTextEffectVO().name() === $data.name }">
+                                                <a data-bind="text: $data.label, click: $root.selectTextEffect"></a>
+                                            </li>
+                                        </ul>
+                        </div>	 
 
                         <!--
                         <h6 data-bind="visible: showTextEffects()">Text Effects</h6>
@@ -1454,7 +1457,6 @@
 
             </div>
         </div>
-
 
 
 
