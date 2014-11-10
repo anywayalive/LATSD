@@ -1006,26 +1006,29 @@
 
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a data-bind="click: align.bind($data, 'left')"></a></li>
-                                    <li><a data-bind="click: align.bind($data, 'hcenter')"></a></li>
-                                    <li><a data-bind="click: align.bind($data, 'right')"></a></li>
+                                    <li><a data-bind="click: align.bind($data, 'left')"><img src="img/1.png" alt="copy" width="20" height="20"> </a></li>
+                                    <li><a data-bind="click: align.bind($data, 'hcenter')"><img src="img/2.png" alt="copy" width="20" height="20"></a></li>
+                                    <li><a data-bind="click: align.bind($data, 'right')"><img src="img/3.png" alt="copy" width="20" height="20"></a></li>
                                 </ul></div>
-                                <div class="btn-group dropdown">
+                                <div class="btn-group dropdown" >
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/layers.png" alt="layers" width="20" height="20">
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a>1</a></li>
-                                        <li><a>2</a></li>
-                                        <li><a>3</a></li>
+                                        <li><a data-bind="click: arrange.bind($data, 'front')"><img src="img/layer1.png" alt="copy" width="20" height="20"></a></li>
+                                        <li><a data-bind="click: arrange.bind($data, 'back')"><img src="img/layer2.png" alt="copy" width="20" height="20"></a></li>
                                     </ul></div>
 
 
 
-                                    <button type="button" class="btn btn-default">
-                                        <!--<a id="text-stroke-btn" class="liveart-color-picker-btn">-->
-                                    <span>Fill</span>
-                                    <input id="text-fill-color-picker-2" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
+                                 <button type="button" class="btn btn-default">
+                                     
+                                 
+                                    <span>Fill</span>                                    
+                                    
+                    
+                                    <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
+                                   
                                     <!--<div style="background-color: rgb(0, 0, 0);" class="colorPicker-picker">&nbsp;</div>-->
 <!--</a>-->
                                 </button>
@@ -1033,6 +1036,8 @@
 
                                 </div>
                             </div>
+
+
 
 
 
