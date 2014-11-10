@@ -1355,33 +1355,27 @@
                             <hr />
 
                             <div class="container-duo">
-                                <h5>Unisex Relaxed-fit T-shirt</h5>
+                                <h5 data-bind="text: selectedProductVO().name"></h5>
                             </div>
 
                             <div class="container-information">
-                                <div class="cont clearfix">
+                                <div class="cont clearfix" data-bind="visible: $root.showProductColorPicker">
                                     <div class="box"></div>
-                                    <h4>Burgundy</h4>
+                                    <h4 data-bind="    text: selectedProductColorVO().name"></h4>
                                 </div>
-                                <p>
-                                    Slim fitting jersey t-shirt for men<br />
-                                    94% cotton, 6% elastane
+                                <p data-bind="text: selectedProductVO().description">
+                                    
                                 </p>
 
                                 <hr style="width: 300px;"/>
 
-                                <div class="title-small" style="margin-bottom: 10px;">
-                                    One lettering, 2 images
+                                <div class="title-small" style="margin-bottom: 10px;" data-bind="text: objectsCount()">
                                 </div>
 
-                                <table>
+                                <table data-bind="foreach: $root.designInfo().colors">
                                     <tr>
-                                        <td>Front</td>
-                                        <td>3 colors</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Right Sleeve</td>
-                                        <td>2 colors</td>
+                                        <td data-bind="text: $data.location"></td>
+                                        <td data-bind="text: $root.colorsCount($data.count)"></td>
                                     </tr>
                                 </table>
 
