@@ -76,12 +76,12 @@
                                     </div>
                                 </div>
                                 <div class="divider"></div>
-                                <ul id="liveart-product-categories" data-bind="foreach: productCategories, visible: productsSearchQuery().length == 0" class="thumbnails liveart-categories-thumbnails">
+                                <!--<ul id="liveart-product-categories" data-bind="foreach: productCategories, visible: productsSearchQuery().length == 0" class="thumbnails liveart-categories-thumbnails">
                                     <li data-bind="css: { active: $data.id == $root.selectedProductCategoryVO().id() }, style: { backgroundImage: 'url(' + thumbUrl + ')' }, click: $root.selectProductCategory" class="thumbnail">
                                         <a data-bind="text: name"></a>
                                     </li>
-                                </ul>
-                                <div id="liveart-product-gallery" data-bind="visible: productsSearchQuery().length > 0">
+                                </ul>-->
+                                <!--<div id="liveart-product-gallery" data-bind="visible: productsSearchQuery().length > 0">
                                     <a class="liveart-back-btn" data-bind="click: hideProductsGallery, visible: productsSearchQuery().length == 0"></a>
                                     <ul id="liveart-products-list" data-bind="foreach: currentProducts" class="thumbnails liveart-thumbnails">
                                         <li>
@@ -92,7 +92,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </div>
+                                </div>-->
                             </div>
                         </li>
 
@@ -1070,35 +1070,34 @@
                             <i class="glyphicon glyphicon-remove-circle"></i>
                         </div>
                         <h1>Select Product </h1>
-                        <small>All products -> T-Shirts -> Short Sleeve T-Shirts</small>
+                        <!--<small>All products -> T-Shirts -> Short Sleeve T-Shirts</small>-->
 
-                        <div class="row grid-product-categories" data-bind="foreach: productCategories, visible: productsSearchQuery().length == 0">
-
+                        <div id="liveart-product-categories" class="row grid-product-categories" data-bind="foreach: productCategories, visible: productsSearchQuery().length == 0">
                             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                                <a class="thumbnail" data-bind="css: { active: $data.id == $root.selectedProductCategoryVO().id() }, style: { backgroundImage: 'url(' + thumbUrl + ')' }, click: $root.selectProductCategory">
-                                    <!--<img class="img-responsive" src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">-->
+                                <a class="thumbnail" data-bind="css: { active: $data.id == $root.selectedProductCategoryVO().id() }, click: $root.selectProductCategory">
+                                    <img class="img-responsive" src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">
                                     <div class="caption">
                                         <h3 data-bind="text: name">Product name</h3>
-                                        <p>price</p> 
+                                        <!-- <p>price</p> -->
                                     </div>
                                 </a>
                             </div>
                         </div>
-                    <!-- this part have a bug. 
-                    <div class="row grid-products" data-bind="foreach: currentProducts, visible: productsSearchQuery().length > 0">
+                    <!-- this part have a bug. -->
+                    <div id="liveart-product-gallery" class="row grid-products" data-bind="visible: productsSearchQuery().length > 0">
                         <a class="liveart-back-btn" data-bind="click: hideProductsGallery, visible: productsSearchQuery().length === 0"></a>
-
-                        <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                            <a class="thumbnail" data-bind="click: $root.selectProduct, css: { active: $data.id === $root.selectedProductVO().id() }">
-                                <img class="img-responsive" src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">
-                                <div class="caption">
-                                    <h3 data-bind="text: name">Product name</h3>
-                                    <p>price</p> 
-                                </div>
-                            </a>
+                        <div data-bind="foreach: currentProducts">
+                            <div class="col-lg-2 col-md-4 col-xs-6 thumb">
+                                <a class="thumbnail" data-bind="click: $root.selectProduct, css: { active: $data.id === $root.selectedProductVO().id() }">
+                                    <img class="img-responsive" src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">
+                                    <div class="caption">
+                                        <h3 data-bind="text: name">Product name</h3>
+                                        <!-- <p>price</p> -->
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                -->
                 <div class="row" style="display:none;">
 
 
@@ -1171,7 +1170,6 @@
                             </div>
                         </a>
                     </div>
-
                     <div class="col-lg-2 col-md-4 col-xs-6 thumb">
                         <a class="thumbnail" href="#">
                             <img class="img-responsive" src="http://placehold.it/200x300" alt="">
@@ -1216,61 +1214,8 @@
                                 <p>price</p> 
                             </div>
                         </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-lg-2 col-md-4 col-xs-6 thumb">
-                        <a class="thumbnail" href="#">
-                            <img class="img-responsive" src="http://placehold.it/200x300" alt="">
-                            <div class="caption">
-                                <h3>Product name</h3>
-                                <p>price</p> 
-                            </div>
-                        </a>
-                    </div>                </div>
+                    </div>                
+                </div>
 
                     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
