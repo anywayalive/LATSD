@@ -201,8 +201,9 @@
 
                                         <!--<div class="divider"></div>-->
                                         <h6 data-bind="visible: showEffectsSlider(), text: selectedTextEffectVO().paramName()"></h6>
-                                        <div id="text-effect-slider" class="noUiSlider" data-bind="visible: showEffectsSlider(), slider: selectedTextEffectVO().value, rangeStart: selectedTextEffectVO().min(), rangeEnd: selectedTextEffectVO().max(), step: selectedTextEffectVO().step(), decimals:2"></div>
-                                        <div class="divider" data-bind="visible: selectedProductSizeVO().notEmpty"></div>
+                                       
+                                        
+										<div class="divider" data-bind="visible: selectedProductSizeVO().notEmpty"></div>
                                         <div id="text-form-size" data-bind="visible: selectedProductSizeVO().notEmpty">
                                             <div>
                                                 <h6 id="text-form-size-label">Size</h6>
@@ -946,8 +947,10 @@
                                                 <a data-bind="text: $data.label, click: $root.selectTextEffect"></a>
                                             </li>
                                         </ul>
-                        </div>	 
-
+                        </div>	
+						<div class="optionsLinePadding">
+							<div id="text-effect-slider" class="noUiSlider" data-bind="visible: showEffectsSlider(), slider: selectedTextEffectVO().value, rangeStart: selectedTextEffectVO().min(), rangeEnd: selectedTextEffectVO().max(), step: selectedTextEffectVO().step(), decimals:2"></div>
+						</div>
                         <!--
                         <h6 data-bind="visible: showTextEffects()">Text Effects</h6>
                         <div data-bind="visible: showTextEffects()" class="btn-group">

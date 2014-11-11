@@ -168,8 +168,8 @@ h5 {
     }
 
 .btn-group > .btn + .dropdown-toggle {
-    padding-right: 7px;
-    padding-left: 7px;
+    padding-right: 11px;
+    padding-left: 9px;
 }
 
 .btn-group > .dropdown-menu {
