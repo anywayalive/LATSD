@@ -316,11 +316,11 @@ input.form-control {
 }
 
 #product-sides-switch-container {
-    background: transparent; /* for old browsers (IE8) */
-    background: rgba(255, 255, 255, 0.4);
-    bottom: 42x;
-    left: 156px;
-    width: 587px;
+	background: transparent; /* for old browsers (IE8) */
+	background: rgba(255, 255, 255, 0.4);
+	bottom: 42x;
+	left: 546px;
+	width: 90px;
 }
 
 #preview-controls-container {

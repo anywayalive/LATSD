@@ -978,7 +978,7 @@
                 <div class="canvas-container-wrap">
                     <div id="canvas-container">
                     
-                        <div id="product-sides-switch-container" class="liveart-panel-container" data-bind="visible: selectedProductVO().locations().length > 1">
+                        <div id="product-sides-switch-container" class="liveart-panel-container_Tanya" data-bind="visible: selectedProductVO().locations().length > 1">
                     <div class="centered-pills-container">
                         <ul class="nav nav-pills" data-bind="foreach: selectedProductVO().locations">
                             <li data-bind="css: { active: $data.name == $root.selectedProductLocation() }">
@@ -992,7 +992,15 @@
                 
                 
                 
-                    </div>
+                  </div>
+                </div>
+               
+                    
+                        
+                
+                
+                
+                  </div>
                 </div>
                 <div class="lower_panel">
 
@@ -1011,7 +1019,7 @@
                                     <li><a data-bind="click: align.bind($data, 'right')"><img src="img/3.png" alt="copy" width="20" height="20"></a></li>
                                 </ul></div>
                                 <div class="btn-group dropdown" >
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/layers.png" alt="layers" width="20" height="20">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/layers.png" alt="layers" width="20" height="20" style="">
                                         <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
@@ -1034,7 +1042,7 @@
                                 </button>
                                     <button type="button" class="btn btn-default">Stroke <input id="graphics-stroke-color-picker" type="text" class="liveart-color-picker dropup-color-picker" data-bind="colorPicker: selectedGraphicsFormatVO().strokeColor, colorPalette: strokeColors"/></button>
 
-                                </div>
+                      </div>
                             </div>
 
 
