@@ -37,7 +37,7 @@
     "defaultNumberObjectText": "00",
     "assetsUrl": "assets/",
     "galleryBaseUrl": "",
-    "getQuoteUrl": "",
+    "getQuoteUrl": "http://hive.liveartdesigner.com/~quiller/LAJS-BS3/services/getQuote.php",
     "getDesignsUrl": "http://localhost/services/getDesigns.php?email=${email}",
     "saveDesignUrl": "http://localhost/services/saveDesign.php",
     "loadDesignUrl": "http://localhost/services/loadDesign.php?design_id=${design_id}",
