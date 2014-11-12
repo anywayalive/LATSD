@@ -1328,36 +1328,43 @@
                                 <h3 style="margin-left: 35px;">4X</h3>
                             </div>
 
-                            <div class="container button clearfix">
-                                <button class="btn">-</button>
-                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                            <div class="container button clearfix" style="display: inline-block;">
+                                <button class="btn" style="margin-right:15px;">-</button>
+                                <div class="container space"> <input class="span2" id="appendedInputButton" size="1" type="text" style="display"></div>
                                 <button class="btn" style="margin-right: 15px;">+</button>
+                                <div class="container space"> <input class="span2" id="appendedInputButton" size="1" type="text" style="display"></div>
 
                                 <button class="btn">-</button>
-                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <div class="container space"> <input class="span2" id="appendedInputButton" size="1" type="text" style="display"></div>
+                            
                                 <button class="btn" style="margin-right: 15px;">+</button> 
 
 
                                 <button class="btn">-</button>
-                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <div class="container space"> <input class="span2" id="appendedInputButton" size="1" type="text" style="display"></div>
+                                
                                 <button class="btn" style="margin-right: 15px;">+</button>
 
 
                                 <button class="btn">-</button>
-                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <div class="container space"> <input class="span2" id="appendedInputButton" size="1" type="text" style="display"></div>
+                                
                                 <button class="btn" style="margin-right: 15px;">+</button> 
 
 
                                 <button class="btn">-</button>
-                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <div class="container space"> <input class="span2" id="appendedInputButton" size="1" type="text" style="display"></div>
+                               
                                 <button class="btn" style="margin-right: 15px;">+</button>
 
                                 <button class="btn">-</button>
-                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <div class="container space"> <input class="span2" id="appendedInputButton" size="1" type="text" style="display"></div>
+                                
                                 <button class="btn" style="margin-right: 15px;">+</button>
 
                                 <button class="btn">-</button>
-                                <input class="span2" id="appendedInputButton" size="1" type="text">
+                                <div class="container space"> <input class="span2" id="appendedInputButton" size="1" type="text" style="display"></div>
+                               
                                 <button class="btn" style="margin-right: 15px;">+</button>
 
                             </div>
@@ -1390,15 +1397,13 @@
                                 </table>
 
                                 <table class="right-table">
-                                    <tr>
-                                        <td>Price per Item</td>
-                                        <td>$7.69</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-size: 22px;">Subtotal</td>
-                                        <td style="font-size: 22px;">$23.07</td>
-                                    </tr>
-                                </table>
+                                <tbody data-bind="foreach: $root.designInfo().prices">
+									<tr>
+										<td data-bind="text: $data.label, css: { bold: $data.isTotal } "></td>
+										<td data-bind="text: $data.price, css: { bold: $data.isTotal }"></td>
+					 				</tr>
+                                    </tbody>
+								</table>
                             </div>
                         </div>
                         <div class="bottom-buttons">
