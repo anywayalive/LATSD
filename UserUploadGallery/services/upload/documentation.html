@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Documentation Overview</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <style>
+            #doc-content{
+                width: 1000px;
+                font-size: 20px;
+            }
+            
+            #doc-content b{
+                font-size: 24px;
+                color: #B40431;
+                background-color: #DCDCDC;
+            }
+            
+            #doc-content ol > li:before{
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="doc-content">
+            <ol type="1">
+                <li><a href="http://blueimp.github.io/jQuery-File-Upload/">jQuery File Upload Demo</a></li>
+                <li><a href="https://github.com/blueimp/jQuery-File-Upload/releases/tag/9.8.0">Download library here</a></li>
+                <li>Copy all .js files in <b>js</b> directory from the 
+                    downloaded directory to your directory</li>
+                <li>Copy .css files in <b>css</b> directory from the 
+                    downloaded directory to your directory: 
+                    <br/><i>jquery.fileupload.css, jquery.fileupload-noscript.css,
+                    jquery.fileupload-ui.css, jquery.fileupload-ui-noscript.css</i></li>
+                <li>Copy images from the <b>img</b> directory and make sure that they will have the same absolute path</li>
+                <li>Copy a form with <i>id="fileupload"</i> in the file <b>index.html</b> to the place where you want to upload files
+                        
+                </li>
+                <li>Include all the above .css and .js files. <br/>
+                    Also include <i>src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"</i> (Load Image plugin is included for the preview images and image resizing functionality)</li>
+                <li>Copy to you directory php scripts from <b>\server\php</b>. Be careful with correct paths in your code!</li>
+                <li>In <b>main.js</b> you can change all your own settings</li>
+                <li>Copy from <b>index.html</b> scripts with <i>id="template-download", id="template-upload"</i>
+                . <br/>They are responsible for rendering files list in the widget</li>
+                <li>Now you are able to test uploading</li>
+                <li>In case some problems, read documentation attentively</li>
+               
+            </ol>
+
+
+
+
+            <br/>
+        </div>
+    </body>
+</html>

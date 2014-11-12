@@ -1,0 +1,426 @@
+
+.container-fixed {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: 550px;
+    position: relative;
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+
+.container-fixed #menu {
+    width: 80px;
+    height: 100%;
+    background: #fff;
+    float: left;
+
+}
+
+
+.container-fixed #menu button{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.menu-icon-1,.menu-icon-2,.menu-icon-3,.menu-icon-4 {
+    height: 50px;
+    width: 50px;
+}
+
+
+.container-fixed #content {
+    width: auto;
+    height: 100%;
+    float: left;
+    padding: 10px;
+}
+
+.container-fixed .button-quote,
+.container-fixed .button-select-product {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 180px;
+    height: 40px;
+    line-height: 1.8 !important;
+}
+
+.container-fixed .color{
+    float: right;
+    margin-top: 5px;
+    width: 180px;
+    height: 34px;
+    height: 40px;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8 !important;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: #cccccc;
+
+}
+
+.container-fixed .color div{
+    height: 25px;
+    width: 25px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: #cccccc;
+    position: absolute;
+    right: 30px;
+    top: 12px;
+}
+
+
+
+.container-fixed #font-option{
+    height: 100%;
+    width: 280px;
+    float: left;
+    background-color: rgb(77,77,77);
+    padding: 10px;
+    position: relative;
+    color: #fff;
+    position: absolute;
+    z-index: 10;
+    left: 80px;
+}
+
+.container-fixed textarea.form-control{
+    height: 100px;
+    width: 260px;
+    resize: none;
+}
+
+.font-option-textarea{
+    position: relative;
+    height: 110px;
+}
+
+button#add-text-btn{
+    position: absolute;
+    right: 5px;
+    bottom: 15px;
+}
+
+.container-fixed #font-option, #product-view, #get-quote-view{
+    display: none;
+    height: 100%;
+}
+
+.container-fixed .glyphicon-top{
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.container-fixed #get-quote-view .glyphicon, #font-option .glyphicon-remove-circle{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*font-options,Katya*/
+.container-fixed .control-holder {
+    margin-top: 10px;
+
+}
+
+.container-fixed textarea { 
+    resize: both; 
+} 
+
+.container-fixed .col-md-3{
+    height: 640px;
+    width: 210px;
+}
+
+.container-fixed .btn-group{
+    height: 60px;
+    margin-top: 15px;
+}
+/*font-options,Katya*/
+/*font-options, Lena*/
+
+.container-fixed hr {
+    margin: 30px 0 30px 0;
+    background: #eee;
+    border: none;
+    border-top: solid 2px #eee;
+}
+
+.container-fixed .wrap-order {
+    width:690px;
+    background:#FFF;
+    margin: 25px auto;
+    position:relative;
+    padding: 20px 80px 20px 80px;
+    height: 555px;
+}
+
+.container-fixed .close {
+    position: absolute;
+    left: 95%;
+    border: none;
+    font-size: 40px;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    color: #ccc;
+    top: 10px;
+}
+
+.container-fixed .close:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.container-fixed .section-sizes {
+    margin-bottom:20px;
+    padding-bottom:15px;
+    border-bottom:1px solid gray;
+}
+
+.container-fixed .title-small {
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #666;
+    text-shadow: 0 0 1px #eee;
+}
+
+.container-fixed .size-wrap {
+    width:10%;
+    display:inline-block;
+    text-align:center;
+}
+
+.container-fixed .container-duo {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #666;
+    text-shadow: 0 0 1px #eee;
+    font-size: 20px;
+}
+
+.container-fixed .size-name {
+    display:block;
+    text-align: center;
+}
+
+.container-fixed .ctrl-minus, .ctrl-plus {
+    width:20px;
+    height:20px;
+    background:#BBB;
+    text-align:center;
+    display:inline-block;
+}
+
+.container-fixed .ctrl-num {
+    width:30px;
+    height:20px;
+    background:#F00;
+    display:inline-block;
+}
+
+.container-fixed input[type="text"] {
+    width: 33px;
+    border: none;
+    border-top: solid 1px #eee;
+    border-bottom: solid 1px #eee;
+    height: 21px;
+    text-align: center;
+    font-size: 14px;
+    background: #eee;
+    font-weight: bold;
+    color: grey;
+}
+
+.container-fixed .letter-cont > * {
+    float: left;
+    margin: -15px 45px 0 38px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.container-fixed .get-quote-view .btn {
+    font-size: 16px;
+    background: #fff;
+    width: 25px;
+    height: 25px;
+    line-height: 21px;
+    text-align: center;
+    float: left;
+    border: solid 1px #eee;
+    font-weight: bold;
+    color: grey;
+}
+
+.container-fixed .get-quote-view .btn:hover {
+    background: #eee;
+    cursor: pointer;
+}
+
+.container-fixed .btn-bottom {
+    position: absolute;
+    left: 450px;
+    top: 530px;
+    padding: 10px 25px 10px 25px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background: #999;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.container-fixed .btn-bottom:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.container-fixed .span2 {
+    float: left;
+}
+
+.container-fixed .container-information {
+    margin-top: -10px;
+}
+
+.container-fixed .container-information p,
+.container-fixed .container-information td
+{
+    color: #777;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.container-fixed .container-information td {
+    width: 100px;
+}
+
+.container-fixed .container-information h4 {
+    color: #B40431;
+    margin: 1px 0 0 10px;
+}
+
+.container-fixed .container-information .cont > *{
+    float: left;
+}
+
+.container-fixed .container-information .box {
+    width: 20px;
+    height: 20px;
+    background: #B40431;
+}
+
+.container-fixed .right-table {
+    position: absolute;
+    left: 450px;
+    top: 430px;
+}
+
+.container-fixed .right-table td {
+    width: 150px;
+    text-align: right;
+    padding-top: 10px;
+}
+
+/* float border */
+.container-fixed .clearfix:before, 
+.container-fixed .clearfix:after { 
+    content: " "; 
+    display: table; 
+}
+.container-fixed .clearfix:after 
+{ 
+    clear: both; 
+}
+.container-fixed .clearfix { 
+    *zoom: 1; 
+}
+
+/*font-options,Lena*/
+
+.container-fixed .product-view {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: 550px;
+    position: relative;
+    background-color: #fff;
+    margin-top: 40px; }
+.container-fixed .row {
+    width: 900px;
+    height: 400px;
+    overflow-y: scroll;
+    margin-left: 0px !important;
+    margin-right: 0px  !important;
+}
+
+.container-fixed .modal-dialog {
+    width: 800px;
+    margin: 30px auto;
+}
+.container-fixed .modal-dialog  .btn-success {
+    right: 10px;
+    bottom: 10px;
+    width: 180px;
+    height: 40px;
+    line-height: 1.8 !important;
+}
+
+.container-fixed .modal-body .btn {
+
+    width: 25px;
+    height: 25px;
+    line-height: 21px;
+    float: left;
+    border: solid 1px #eee;
+}
+
+/*Tanya*/	
+.container-fixed .lower_panel{
+    position: absolute;
+    bottom: 23px;
+    font-size: 13px;
+    margin-left: 300px;
+    width: 350px;
+    height: 40px;
+    left: -6px;	
+}
+.container-fixed .share{
+    position: absolute;
+    bottom: 10px;
+    font-size: 13px;
+    margin-left: 955px;
+    width: 40px;
+    height: 40px;
+    left: -6px;
+    margin-bottom: 50px;
+}
+.container-fixed .zoom{
+    position: absolute;
+    bottom: 30px;
+    font-size: 13px;
+    margin-left: 30px;
+
+
+}
+
+/*Tanya*/	
