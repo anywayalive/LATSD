@@ -1105,7 +1105,8 @@
                     <!-- this part have a bug. -->
                     <div id="liveart-product-gallery" class="row grid-products" data-bind="visible: productsSearchQuery().length > 0">
                         <a class="liveart-back-btn" data-bind="click: hideProductsGallery, visible: productsSearchQuery().length === 0"></a>
-                        <div data-bind="foreach: currentProducts">
+                        <!--<span class="unique-debug-class">aaa<div class="unique2">bbb</div>ccc</span>-->
+                        <div id="liveart-products-list" data-bind="foreach: currentProducts">
                             <div class="col-lg-2 col-md-4 col-xs-6 thumb">
                                 <a class="thumbnail" data-bind="click: $root.selectProduct, css: { active: $data.id === $root.selectedProductVO().id() }">
                                     <img class="img-responsive" src="" data-bind="attr: { src: thumbUrl, title: name }" alt="">
@@ -1117,7 +1118,7 @@
                             </div>
                         </div>
                     </div>
-                <div class="row" style="display:none;">
+                <!--<div class="row" style="display:none;">
 
 
                     <div class="col-lg-2 col-md-4 col-xs-6 thumb">
@@ -1234,8 +1235,8 @@
                             </div>
                         </a>
                     </div>                
-                </div>
-
+                </div>-->
+<!--
                     <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -1301,6 +1302,7 @@
 
 
                     </div> 
+                -->
                 </div>
                 <!--//-->
 

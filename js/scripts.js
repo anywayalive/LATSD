@@ -1,9 +1,9 @@
 $(function() {
     //$('.selectpicker').selectpicker();
-    $('.menu-icon-1').tooltip();
-    $('.menu-icon-2').tooltip();
-    $('.menu-icon-3').tooltip();
-    $('.menu-icon-4').tooltip();
+    // $('.menu-icon-1').tooltip();
+    // $('.menu-icon-2').tooltip();
+    // $('.menu-icon-3').tooltip();
+    // $('.menu-icon-4').tooltip();
 
     $("#menu button").click(function() {
         $("#menu").css("background-color", "rgb(55,55,55)");
@@ -40,9 +40,10 @@ $(function() {
     });
 
     /*-------- modal window --------------*/
-    $("#product-view .row div").click(function() {
-        $('.modal').modal('show');
-    });
+    // What is this???? Who added this? WHY???
+    // $("#product-view .row div").click(function() {
+    //     $('.modal').modal('show');
+    // });
 
 });
 
