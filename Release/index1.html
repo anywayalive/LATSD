@@ -1010,9 +1010,9 @@
                         <div class="btn-group">
                             <button type="button" class="btn btn-default" data-bind="click: copy"><img src="img/copy.png" alt="copy" width="20" height="20"></button>
                             <button type="button" class="btn btn-default" data-bind="click: paste"><img src="img/paste.png" alt="paste" width="20" height="20"></button>
-                            <div class="btn-group dropdown">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/align.png" alt="align" width="20" height="20">
-                                    <span class="caret"></span>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/align.png" alt="align" width="20" height="20"><img src="img/point.png" alt="copy" width="20" height="20">
+                                   
 
                                 </button>
                                 <ul class="dropdown-menu">
@@ -1020,9 +1020,9 @@
                                     <li><a data-bind="click: align.bind($data, 'hcenter')"><img src="img/2.png" alt="copy" width="20" height="20"></a></li>
                                     <li><a data-bind="click: align.bind($data, 'right')"><img src="img/3.png" alt="copy" width="20" height="20"></a></li>
                                 </ul></div>
-                                <div class="btn-group dropdown" >
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/layers.png" alt="layers" width="20" height="20" style="">
-                                        <span class="caret"></span>
+                                <div class="btn-group dropup" >
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="img/layers.png" alt="layers" width="20" height="20" style=""> <img src="img/point.png" alt="copy" width="20" height="20">
+                                        
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a data-bind="click: arrange.bind($data, 'front')"><img src="img/layer1.png" alt="copy" width="20" height="20"></a></li>
@@ -1031,7 +1031,7 @@
 
 
 
-                                 <button type="button" class="btn btn-default">
+                            <!--  <button type="button" class="btn btn-default"> 
                                      
                                  
                                     <span>Fill</span>                                    
@@ -1039,10 +1039,9 @@
                     
                                     <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
                                    
-                                    <!--<div style="background-color: rgb(0, 0, 0);" class="colorPicker-picker">&nbsp;</div>-->
-<!--</a>-->
-                                </button>
-                                    <button type="button" class="btn btn-default">Stroke <input id="graphics-stroke-color-picker" type="text" class="liveart-color-picker dropup-color-picker" data-bind="colorPicker: selectedGraphicsFormatVO().strokeColor, colorPalette: strokeColors"/></button>
+                                    
+                                 </button>
+                                    <button type="button" class="btn btn-default">Stroke <input id="graphics-stroke-color-picker" type="text" class="liveart-color-picker dropup-color-picker" data-bind="colorPicker: selectedGraphicsFormatVO().strokeColor, colorPalette: strokeColors"/></button>-->
 
                       </div>
                             </div>
