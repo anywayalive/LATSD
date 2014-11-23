@@ -1,8 +1,8 @@
 div.colorPicker-picker {
  /*height: 18px;
   width: 18px;*/
-  height: 30px;
-  width: 37px;
+  height: 28px;
+  width: 28px;
   padding: 0 !important;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -53,6 +53,23 @@ div.colorPicker-picker.transparent,
 div.colorPicker-swatch.transparent {
   background-image: url(../../assets/img/transparent-cross-icon.png);
   background-color: #ffffff;
+  background-size: cover;
+}
+
+#text-font-options > div.colorPicker-picker.transparent {
+width: 28px;
+}
+
+#text-stroke-color-picker-palette > div.colorPicker-swatch.tooltipster.transparent.tooltipstered {
+width: 30px;
+}
+
+#text-letter-spacing-slider-new {
+margin-top: 10px;
+}
+
+#text-line-leading-slider-new {
+margin-top: 10px;
 }
 
 div.colorPicker-swatch:hover,

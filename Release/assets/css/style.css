@@ -1689,5 +1689,12 @@ ul.liveart-button-bar {
             margin-bottom: 0px;
             font-weight: bold;
         }
+    #font-btn {
+    width: 174px; 
+    background-color: rgb(77, 77, 77); 
+    border: 1px solid rgb(90, 90, 90); 
+    color: #FFF;
+    }
+    
 /* Upload Color Count Modal end */
 /* 7. Modal end*/

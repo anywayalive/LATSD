@@ -165,7 +165,7 @@
                                             <button class="btn btn-default dropdown-toggle" type="button" id="font-dropdown-btn" data-toggle="dropdown">
                                                 <span class="caret"></span>
                                             </button>
-                                            <ul class="dropdown-menu" id="font-list" data-bind="foreach: fonts" style="height: 300px; overflow-y: scroll;">
+                                            <ul class="dropdown-menu" id="font-list" data-bind="foreach: fonts" style="height: 300px; margin-top: -16px; overflow-y: scroll;">
                                                 <li data-bind="css: { active: $root.selectedLetteringVO().formatVO().fontFamily() === $data.fontFamily }">
                                                     <a data-bind="text: $data.name, click: $root.selectFont, style: { fontFamily: $data.fontFamily }"></a>
                                                 </li>
@@ -899,10 +899,10 @@
                             <button class="btn btn-default" type="button" id="italic-toggle-btn" data-bind="checkbox: selectedLetteringVO().formatVO().italic, enable: selectedFont().italicAllowed"><span class="glyphicon glyphicon-italic"></span></button>
                         </div> 
 
-
+                        <span style="font-size: 13px; padding-top: 5px">Fill:</span><span style="margin-left: 147px; font-size: 13px; padding-top: 5px">Stroke:</span>
                         <div id="text-font-options">
                             <input id="text-fill-color-picker" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().fillColor, colorPalette: colors" />
-                            <span style="margin-left: 90px; font-size: 14px; padding-top: 5px">Stroke</span><input id="text-stroke-color-picker" style="float:right; width: 30px" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
+                            <input id="text-stroke-color-picker" style="float:right; width: 30px" type="text" class="liveart-color-picker" data-bind="colorPicker: selectedLetteringVO().formatVO().strokeColor, colorPalette: strokeColors" />
                         </div>
                         <!--
                         <div id="text-font-options">
@@ -913,7 +913,7 @@
                     -->
 					<div id="zoom-slider" class="noUiSlider" data-bind=""></div>
                     <div>  
-                        <span data-bind="visible: showLetterSpacingSlider()">Letter spacing</span>
+                        <span style="padding-bottom:5px;" data-bind="visible: showLetterSpacingSlider()">Letter spacing</span>
                         <span id="letter-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().letterSpacing(), visible: showLetterSpacingSlider()"></span>
                         <div id="text-letter-spacing-slider-new" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().letterSpacing,
                         rangeStart: 0, rangeEnd: 20, step: 1, visible: showLetterSpacingSlider()"></div>
@@ -925,7 +925,7 @@
                                    data-slider-value="1">-->
                     </div>
                            <div data-bind="visible: showLineLeadingSlider()">
-                            <span>Line spacing</span>
+                            <br><span>Line spacing</span>
 							<span id="line-space-val" class="pull-right" data-bind="text: selectedLetteringVO().formatVO().lineLeading(), visible: showLineLeadingSlider()" style=""></span>
 							<div id="text-line-leading-slider-new" class="noUiSlider" data-bind="slider: selectedLetteringVO().formatVO().lineLeading,
 								rangeStart: 0, rangeEnd: 3, step: 0.05, decimals: 2, visible: showLineLeadingSlider()" style=""></div>
