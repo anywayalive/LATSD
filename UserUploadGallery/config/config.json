@@ -1,0 +1,48 @@
+{
+    "productsList": {
+        "url": "config/products.json"
+    },
+    "defaultProductId": "11",
+    "defaultProductSize_": [ 32, 16 ],
+    "fonts": {
+        "url": "config/fonts.json"
+    },
+    "colors": {
+        "url": "config/colors.json"
+    },
+    "graphicsList": {
+        "url": "config/graphics.json"
+    },
+    "options": {
+        "deleteOnDoubleClick": false,
+        "includeProductInDesign": true,
+        "includePrintingAreaInDesign": true,
+		"includeMaskInDesign": "true",
+        "fontsCSSUrl": "http://liveart/LAJS/fonts/fonts.css",
+        "zoomEnabled": true,
+        "minZoom": 50,
+        "maxZoom": 150,
+        "checkeredBackground": true,
+        "unit": "in",
+        "unit2": "ft",
+        "unitConversionMult": 12,
+        "showProductSelector": true,
+        "checkTextFXThrottle": 400
+    },
+    "textEffects": {
+        "config": "config/textEffects.json",
+		"url": "http://hive.liveartdesigner.com/mmjs/services/getTextZ.php"
+    },
+    "defaultNameObjectText": "NAMES HERE",
+    "defaultNumberObjectText": "00",
+    "assetsUrl": "assets/",
+    "galleryBaseUrl": "",
+    "getQuoteUrl": "",
+    "getDesignsUrl": "http://liveart/services/getDesigns.php?email=${email}",
+    "saveDesignUrl": "http://liveart/services/saveDesign.php",
+    "loadDesignUrl": "http://liveart/services/loadDesign.php?design_id=${design_id}",
+    "redirectUrl": "http://liveart/services/order.php?design_id=${design_id}",
+    "uploadImageUrl": "http://liveart/services/uploadImage.php",
+    "shareLinkUrl": "http://liveart/index.html?design_id=${design_id}",
+    "uploaderUrl": "http://liveart/services/upload/ImageUploader.php"
+}
