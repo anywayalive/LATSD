@@ -1099,9 +1099,15 @@
                         </span>-->
 
                         <div id="liveart-product-categories" class="row grid-product-categories" data-bind="visible: productsSearchQuery().length == 0">
-                            <ol class="breadcrumb">
+                            <ol class="breadcrumb col-md-6">
                                 <li class="active" data-bind="">All products</li>
                             </ol>
+                            <div class="col-md-5 col-md-push-1 breadcrumb">
+                                <img class="current-product-img" alt="" height="28" data-bind="attr: { src: $root.selectedProductVO().thumbUrl, title: $root.selectedProductVO().name }" src="">
+                                <span class="current-product-phrase">Current product</span>
+                                <span class="current-product-name" data-bind="text: $root.selectedProductVO().name"></span>
+                            </div>
+
                             <div data-bind="foreach: productCategories">
                                 <div class="col-lg-2 col-md-4 col-xs-6 thumb">
                                     <a class="thumbnail" data-bind="css: { active: $data.id == $root.selectedProductCategoryVO().id() }, click: $root.selectProductCategory">
@@ -1115,10 +1121,15 @@
                         </div>
                         <!-- this part have a bug. -->
                         <div id="liveart-product-gallery" class="row grid-products" data-bind="visible: productsSearchQuery().length > 0">
-                            <ol class="breadcrumb">
+                            <ol class="breadcrumb col-md-6">
                                 <li><a class="" data-bind="click: hideProductsGallery">All products</a></li>
                                 <li class="active" data-bind="text: $root.selectedProductCategoryVO().name">T-Shirts</li>
                             </ol>
+                            <div class="col-md-5 col-md-push-1 breadcrumb">
+                                <img class="current-product-img" alt="" height="28" data-bind="attr: { src: $root.selectedProductVO().thumbUrl, title: $root.selectedProductVO().name }" src="">
+                                <span class="current-product-phrase">Current product</span>
+                                <span class="current-product-name" data-bind="text: $root.selectedProductVO().name"></span>
+                            </div>
                             <!--<a class="liveart-back-btn" data-bind="click: hideProductsGallery, visible: productsSearchQuery().length === 0"></a>-->
                             <!--<span class="unique-debug-class">aaa<div class="unique2">bbb</div>ccc</span>-->
                             <div id="liveart-products-list" data-bind="foreach: currentProducts">

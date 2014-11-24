@@ -26,9 +26,9 @@
 
 
 
-.glyphicon-remove-circle:before {
+/*.glyphicon-remove-circle:before {
 	content: "x" !important;
-}
+}*/
 
 
 .btn-default, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
@@ -554,4 +554,12 @@ button#add-text-btn{
 .grid-product-categories .thumbnail .caption .product-price,
 .grid-products .thumbnail .caption .product-price {
     font-size: 12px;
+}
+
+.current-product-img {
+    float: right; 
+    border: 1px solid rgb(0, 0, 0); 
+    margin-top: -6px; 
+    height: 28px; 
+    margin-bottom: -6px;
 }
