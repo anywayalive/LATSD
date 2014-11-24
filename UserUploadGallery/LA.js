@@ -2,6 +2,37 @@ function isNullOrUndefined(val) {
     return (typeof (val) == 'undefined' || val == null);
 }
 
+function renderUpload(files,a,o){
+    var res = "";
+    for (var i = 0, file; file = files[i]; i++) {
+        res += "<div class='template-upload fade'><span class='preview'></span><p class='name'>"
+                + file.name +
+                "</p><strong class='error text-danger'></strong>";
+
+        if (!i && !o.options.autoUpload) {
+            res += "<button class='btn btn-primary start' style='display: none'>" +
+                    "<i class='glyphicon glyphicon-upload'></i>" +
+                    "<span>Start</span>" +
+                    "</button>";
+        }
+        if (!i) {
+            res += "<button class='btn btn-warning cancel' style='display: none'>" +
+                    "<i class='glyphicon glyphicon-ban-circle'></i>" +
+                    "<span>Cancel</span>" +
+                    "</button>";
+        }
+
+    } 
+    
+    return res;
+}
+ 
+function add(url){
+    userInteract({
+                addCustomGraphics: url
+            });
+}
+
 var LetteringVO = function (textString, formatVO) {
     if (isNullOrUndefined(textString)) textString = '';
     if (isNullOrUndefined(formatVO)) formatVO = new TextFormatVO();
@@ -602,6 +633,8 @@ function LAControlsModel() {
     self.selectedProductVO().id.subscribe(function (id) {
         userInteract({ selectedProductId: id });
     });
+    
+    
 
     // product's selected color value object
     self.selectedProductColorVO = ko.observable(new ComplexColorVO(updateProductColorize));
@@ -1346,7 +1379,12 @@ function LAControlsModel() {
     };
 
     self.showUploadConditions2 = function() {
-        jQuery("#liveart-upload-conditions-popup").modal("show");
+        var numItems = jQuery('.template-upload').length;
+        if(numItems>0){
+            jQuery("#liveart-upload-conditions-popup").modal("show");
+        }else{
+            alert("No items have been selected");
+        }
     };
 
     self.agreeUploadRules = function() {
@@ -2340,6 +2378,8 @@ options.placeOrderHandler = null;
 
 //liveArt.debug();
 liveArt.init(document.getElementById('canvas-container'), "config/config.json", controlsUpdateHandler, options);
+
+
 
 /**
  * LIVEART INITALIZATION ENDS HERE

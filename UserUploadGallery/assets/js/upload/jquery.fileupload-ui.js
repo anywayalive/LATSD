@@ -497,6 +497,7 @@
                 this.options.uploadTemplate,
                 files
             );
+            //return renderUpload(files,this._formatFileSize,this.options);
         },
 
         _renderDownload: function (files) {

@@ -20,7 +20,7 @@ jQuery(function () {
     jQuery('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         xhrFields: {withCredentials: true},
-        url: '/services/upload/ImageUploader.php'
+        url: '/services/upload/index.php'
     });
 
     // Enable iframe cross-domain access via redirect option:

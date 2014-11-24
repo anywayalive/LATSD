@@ -251,7 +251,7 @@ class UploadHandler
     }
 
     protected function set_additional_file_properties($file) {
-        $file->deleteUrl = $this->options['script_url']."ImageUploader.php/"
+        $file->deleteUrl = $this->options['script_url']
             .$this->get_query_separator($this->options['script_url'])
             .$this->get_singular_param_name()
             .'='.rawurlencode($file->name);
@@ -1056,7 +1056,6 @@ class UploadHandler
                     );
                 } else {
                     move_uploaded_file($uploaded_file, $file_path);
-                    copy($uploaded_file, "../files/uploads/");
                 }
             } else {
                 // Non-multipart uploads (PUT method support)
@@ -1287,7 +1286,7 @@ class UploadHandler
             foreach ($upload['tmp_name'] as $index => $value) {
                 $files[] = $this->handle_file_upload(
                     $upload['tmp_name'][$index],
-                    $file_name ? $file_name : $upload['name'][$index],
+                    $this->translitIt($upload['name'][$index]),
                     $size ? $size : $upload['size'][$index],
                     $upload['type'][$index],
                     $upload['error'][$index],
@@ -1340,5 +1339,26 @@ class UploadHandler
         }
         return $this->generate_response($response, $print_response);
     }
+    
+    public function translitIt($str) {
+        $tr = array(
+            "А" => "A", "Б" => "B", "В" => "V", "Г" => "G",
+            "Д" => "D", "Е" => "E", "Ж" => "J", "З" => "Z", "И" => "I",
+            "Й" => "Y", "К" => "K", "Л" => "L", "М" => "M", "Н" => "N",
+            "О" => "O", "П" => "P", "Р" => "R", "С" => "S", "Т" => "T",
+            "У" => "U", "Ф" => "F", "Х" => "H", "Ц" => "TS", "Ч" => "CH",
+            "Ш" => "SH", "Щ" => "SCH", "Ъ" => "", "Ы" => "YI", "Ь" => "",
+            "Э" => "E", "Ю" => "YU", "Я" => "YA", "а" => "a", "б" => "b",
+            "в" => "v", "г" => "g", "д" => "d", "е" => "e", "ж" => "j",
+            "з" => "z", "и" => "i", "й" => "y", "к" => "k", "л" => "l",
+            "м" => "m", "н" => "n", "о" => "o", "п" => "p", "р" => "r",
+            "с" => "s", "т" => "t", "у" => "u", "ф" => "f", "х" => "h",
+            "ц" => "ts", "ч" => "ch", "ш" => "sh", "щ" => "sch", "ъ" => "y",
+            "ы" => "yi", "ь" => "", "э" => "e", "ю" => "yu", "я" => "ya", "ё" => "yo"
+        );
+        return strtr($str, $tr);
+    }
 
 }
+
+

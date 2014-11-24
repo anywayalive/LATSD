@@ -42,9 +42,6 @@
 
         <!-- LiveArt Designer Fonts -->
         <link rel="stylesheet" href="fonts/fonts.css" type="text/css" />
-        <link rel="stylesheet" href="../css/style.css">
-        <script src="../js/scripts.js"></script>
-
         <!-- FileUpload -->
         <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
         <!-- blueimp Gallery styles -->
@@ -399,8 +396,7 @@
                                         </div>
                                         <!-- The table listing the files available for upload/download -->
                                         <!--<table role="presentation" class="table table-striped">-->
-                                        <i class="glyphicon glyphicon-play-circle" data-bind="click: addImageByUrl2.bind('url','services/upload/files/1.jpg')"></i>
-
+                                       
                                         <div class="files"></div>
 
                                         <!--</table>-->
@@ -926,7 +922,7 @@
                 {% } else { %}
                  {% if (file.thumbnailUrl) { %}
                      
-                <div class="template-download fade"  data-bind="click: addImageByUrl2.bind('url', '{%=file.url%}')">
+                <div class="template-download fade" onclick="add('{%=file.url%}')">
                     <span class="preview">
                     
                     <a  title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>

@@ -43,5 +43,6 @@
     "loadDesignUrl": "http://liveart/services/loadDesign.php?design_id=${design_id}",
     "redirectUrl": "http://liveart/services/order.php?design_id=${design_id}",
     "uploadImageUrl": "http://liveart/services/uploadImage.php",
-    "shareLinkUrl": "http://liveart/index.html?design_id=${design_id}"
+    "shareLinkUrl": "http://liveart/index.html?design_id=${design_id}",
+    "uploaderUrl": "http://liveart/services/upload/ImageUploader.php"
 }
