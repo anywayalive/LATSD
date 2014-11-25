@@ -563,3 +563,15 @@ button#add-text-btn{
     height: 28px; 
     margin-bottom: -6px;
 }
+
+.breadcrumb-current-product {
+    text-align:right;
+}
+
+.current-product-phrase:after {
+    content:':';
+}
+
+.product-view .glyphicon-search {
+    display:none;
+}
